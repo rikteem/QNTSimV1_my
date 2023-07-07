@@ -1,0 +1,44 @@
+version: '3.7'
+
+services:
+
+  web:
+    build: backend
+    # command: gunicorn --workers=3 --threads=3 QNTSIM.wsgi:application --bind 0.0.0.0:8000
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./backend:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    # networks:
+    #   - djangonetwork
+  db:
+    image: postgres
+    # command: postgres -c stats_temp_directory=/tmp
+    ports:
+      - '5432'
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  pgadmin:
+    container_name: pgadmin4_container
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5050:80"
+
+  ng:
+    container_name: ng1
+    build: angular
+    ports:
+      - "80:80"
+    tty: true
