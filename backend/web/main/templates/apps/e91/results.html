@@ -1,0 +1,39 @@
+<table id="Keys">
+    <caption><h3>Keys</h3></caption>
+    <tr>
+        <th></th>
+        {% for sender_key in sender_keys %}
+        <th>{{ forloop.counter }}</th>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th>Sender</th>
+        {% for sender_key in sender_keys %}
+        <td>{{ sender_key }}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th>Receiver</th>
+        {% for receiver_key in receiver_keys %}
+        <td>{{ receiver_key }}</td>
+        {% endfor %}
+    </tr>
+</table>
+
+<br>
+
+<table id="stats">
+    <caption><h3>Statistics</h3></caption>
+
+    <tr>
+        <th>Key Length</th>
+        <td>{{ keyLength }}</td>
+    </tr>
+    <tr>
+        <th>Mismatched keys</th>
+        <td>{{ mismatch }}</td>
+    </tr><tr>
+        <th>Correlation value</th>
+        <td>{{ correlation }}</td>
+    </tr>
+</table>

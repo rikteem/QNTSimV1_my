@@ -1,0 +1,63 @@
+{% extends '../base.html' %}
+
+{% block app %}e2e{% endblock %}
+
+{% block appConf %}
+
+<h5 class="banner-heading h3 text-secondary display-3 mb-0 pb-5 mx-0 px-0 light-300 typo-space-line">
+    E2E Application Parameters
+</h5>
+
+<form id="appSettings">
+    <label for="sender">Select Sender: </label>
+    <select class="appnode" name="sender" id="sender">
+        {% comment %} {% for node in nodes %}
+        <option value="{{node}}">{{node}}</option>
+        {% endfor %} {% endcomment %}
+    </select>
+
+    <label for="receiver">Select Receiver: </label>
+    <select class="appnode" name="receiver" id="receiver">
+        {% comment %} {% for node in nodes %}
+        <option value="{{node}}">{{node}}</option>
+        {% endfor %} {% endcomment %}
+    </select>
+
+    <label for="startTime">Start Time: </label>
+    <input type="text" name="startTime" id="startTime" value="1e12">
+    <label for="size">Size: </label>
+    <input type="text" name="size" id="size" value="6">
+    <label for="priority">Priority: </label>
+    <input type="text" name="priority" id="priority" value="0">
+    <label for="targetFidelity">Target Fidelity: </label>
+    <input type="text" name="targetFidelity" id="targetFidelity"value="0.5">
+    <label for="timeout">Timeout: </label>
+    <input type="text" name="timeout" id="timeout" value="2e12">
+
+</form>
+
+<!--<footer>
+    <h4>e2e           : End to End entanglement generation between any two nodes </h4>
+    <h4>Sender        : name of node to establish entanglement from</h4>
+    <h4>Receiver      : name of node to establish entanglement with </h4>
+    <h4>startTime     : The request arrival time </h4>
+    <h4>Size          : number of entangledd memory pairs to create </h4>
+    <h4>Priority      : Priority of the request </h4>
+    <h4>targetFidelity: desired fidelity of entanglement </h4>
+    <h4>timeout       : From startTime the time window within which entanglements need to be generated </h4>
+</footer>-->
+
+<div class="description">
+    <p class="banner-body text-muted py-3 mx-0 px-0">
+
+        <br><b>E2E            : </b> End to End entanglement generation between any two nodes
+        <br><b>Sender         : </b> name of node to establish entanglement from
+        <br><b>Receiver       : </b> name of node to establish entanglement with
+        <br><b>startTime      : </b> simulation start time of entanglement
+        <br><b>Size           : </b> number of entangled memory pairs to create
+        <br><b>Priority       : </b> Priority of the request
+        <br><b>targetFidelity : </b> desired fidelity of entanglement
+        <br><b>timeout        : </b> From startTime the time window within which entanglements need to be generated
+    </p>
+</div>
+{% endblock %}

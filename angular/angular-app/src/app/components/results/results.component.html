@@ -1,0 +1,1122 @@
+<div class="main">
+    <!-- <p-tabMenu #menuItems [model]="items" [activeItem]="activeItem" (click)="activateMenu()"></p-tabMenu> -->
+    <br>
+
+    <div class="container shadow p-4 mb-5 bg-white rounded">
+        <div *ngIf="app_id==1">
+            <h1 class="display-3">Ekert 91 QKD </h1>
+
+            <br>
+            <div class="row">
+                <h5 class="text-center col-12">Performance parameters of the
+                    constructed network topology</h5>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <table class="table table-bordered">
+                        <thead class="thead-light">
+                            <tr>
+                                <th class="col table-secondary text-center" pTooltip="Total run time of the simulation."
+                                    tooltipPosition="top">Execution Time</th>
+                                <th class="col table-secondary text-center"
+                                    pTooltip="The final fidelity of distributed entanglement at the end nodes post swapping and purification."
+                                    tooltipPosition="top">
+                                    Fidelity</th>
+                                <th class="col table-secondary text-center"
+                                    pTooltip="The success percentage of the amount of entanglements distributed compared to the entanglements demanded by user. If the demand size is not meant before the end time of the simulation, the success rate will drop."
+                                    tooltipPosition="top">
+                                    Success Rate</th>
+                                <th class="col table-secondary text-center"
+                                    pTooltip="This is the total classical channel delay incurred while executing the protocol."
+                                    tooltipPosition="top">
+                                    Latency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col text-center">{{performance.execution_time}}&nbsp;secs</td>
+                                <td class="col text-center">{{performance.fidelity}}</td>
+                                <td class="col text-center">{{performance.throughput}}%</td>
+                                <td class="col text-center">{{performance.latency}}&nbsp;secs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <p>Basis : Measurement basis chosen by Sender or Receiver.
+                    <br>
+                    Value: Measurement results obtained from the observations by Sender or Receiver
+                </p>
+                <br>
+                <div class="tabel">
+                    <h5><u>Sender</u></h5>
+                    <table class="table table-bordered">
+                        <thead class="thead-light">
+
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col">Basis</td>
+                                <td class="col" [ngClass]="senderbasis(i)"
+                                    *ngFor="let app of data.sender_basis_list;let i=index">
+                                    {{app}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col">Value</td>
+                                <td class="col" [ngClass]="senderbasis(i)"
+                                    *ngFor="let app of data.sender_meas_list;let i=index">{{app}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <p>Sifted Key [The final key] is obtained at Sender and Receiver from measurement results obtained by
+                    basis matching (indicated in green above)</p>
+
+                <div class="tabel">
+                    <h5><u>Receiver</u></h5>
+                    <table class="table table-bordered">
+                        <thead class="thead-light">
+
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col">Basis</td>
+                                <td class="col" [ngClass]="senderbasis(i)"
+                                    *ngFor="let app of data.receiver_basis_list;let i=index">{{app}}</td>
+                            </tr>
+                            <tr>
+                                <td class="col">Value</td>
+                                <td class="col" [ngClass]="senderbasis(i)"
+                                    *ngFor="let app of data.receiver_meas_list;let i=index">{{app}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>The protocol has been executed and key of the requested length has been shared between sender &
+                        receiver.​
+
+                        At the end of the execution of protocol, the sifted key between the source and destination is
+                        given
+                        below​</p>
+                    <br>
+                    <table class="table table-bordered align-middle">
+                        <thead class="thead-light">
+                            <tr>
+                                <th class="col">Sender</th>
+                                <th class="col">Receiver</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr pTooltip="The final Quantum Keys generated post execution of the protocol.">
+                                <td class="col">Key: {{data.sender_keys}}</td>
+                                <td class="col">Key: {{data.receiver_keys}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="app_id==2">
+            <div class="display-5">End to End Bell pair Generation</div>
+            <br>
+            <br>
+            <div class="row">
+                <h5 class="text-center col-12">Performance parameters of the
+                    constructed network topology</h5>
+                <!-- <div class="text-right col-2">
+                    <button class="btn btn-outline-primary" (click)="info_1()"><i class="pi pi-question"></i></button>
+                </div> -->
+            </div>
+            <div class="col">
+                <div class="row">
+                    <table class="table table-bordered">
+                        <thead class="thead-light">
+                            <tr>
+                                <th class="col table-secondary text-center" pTooltip="Total run time of the simulation."
+                                    tooltipPosition="top">Execution Time</th>
+                                <th class="col table-secondary text-center"
+                                    pTooltip="The final fidelity of distributed entanglement at the end nodes post swapping and purification."
+                                    tooltipPosition="top">
+                                    Fidelity</th>
+                                <th class="col table-secondary text-center"
+                                    pTooltip="The success percentage of the amount of entanglements distributed compared to the entanglements demanded by user. If the demand size is not meant before the end time of the simulation, the success rate will drop."
+                                    tooltipPosition="top">
+                                    Success Rate</th>
+                                <th class="col table-secondary text-center"
+                                    pTooltip="This is the total classical channel delay incurred while executing the protocol."
+                                    tooltipPosition="top">
+                                    Latency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <!-- <td class="col text-center">{{nodeData.sender}}</td>
+                                <td class="col text-center">{{nodeData.receiver}}</td> -->
+                                <td class="col text-center">{{performance.execution_time}}&nbsp;secs</td>
+                                <td class="col text-center">{{performance.fidelity}}</td>
+                                <td class="col text-center">{{performance.throughput}}%</td>
+                                <td class="col text-center">{{performance.latency}}&nbsp;secs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <h5 class="text-center col-12" style="padding-top:10px ;">Execution details of entanglement
+                        generation on the end nodes</h5>
+                    <!-- <div class="text-right col-2">
+                        <button class="btn btn-outline-primary" (click)="info_2()"><i
+                                class="pi pi-question"></i></button>
+                    </div> -->
+                </div>
+                <!-- <h5>Node: Sender</h5> -->
+                <div class="row">
+                    <table id="table1" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="col table-secondary text-center" placement="top"
+                                    pTooltip="The Quantum Memory cell at the respective end user node holding a successfully entangled qubit mapped to the receiver end node quantum memory cell. Please note: This number is only a reference and doesn't dictate the exact keys of memory cell at the end users memory array. This number dictates the demand size requested.">
+                                    Memory Index
+                                </th>
+                                <th class="col table-secondary text-center"
+                                    pTooltip="The sender node which has requested an EPR pair from the Quantum Network.">
+                                    End Node 1</th>
+                                <th class="col table-secondary text-center"
+                                    pTooltip="The recipient node of the remote entanglement generation event been requested by the sender.">
+                                    End Node 2</th>
+                                <th class="col table-secondary text-center"
+                                    pTooltip="The final fidelity of EPR pairs distributed at the end nodes.">Fidelity
+                                </th>
+                                <th class="col table-secondary text-center"
+                                    pTooltip="The simulation time when the entanglement was created at end users node (in secs).">
+                                    Entanglement Time</th>
+                                <th class="col table-secondary text-center"
+                                    pTooltip="The time after which the entanglement will expire. This is an optimizable parameter which can be changed according to simulation's need (default=-1 meaning infinite expiry time) (in secs).">
+                                    Expiry Time</th>
+                                <th class="col table-secondary text-center"
+                                    pTooltip="Returns the status of entanglement generation event at desired end nodes.">
+                                    Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of data.sender">
+                                <td *ngFor="let item of item" class="text-center">{{item}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="app_id==3">
+            <div class="display-4">
+                Quantum Teleportation
+            </div>
+            <br>
+            <div class="row">
+                <h5 class="text-center col-12">Performance parameters of the
+                    constructed network topology</h5>
+            </div>
+            <br>
+            <div class="col">
+                <div class="row">
+                    <table class="table table-bordered">
+                        <thead class="thead-light">
+                            <tr>
+                                <th class="col table-secondary text-center" pTooltip="Total run time of the simulation."
+                                    tooltipPosition="top">
+                                    Execution Time</th>
+                                <th class="col table-secondary text-center"
+                                    pTooltip="The final fidelity of distributed entanglement at the end nodes post swapping and purification."
+                                    tooltipPosition="top">
+                                    Fidelity</th>
+                                <th class="col table-secondary text-center"
+                                    pTooltip="The success percentage of the amount of entanglements distributed compared to the entanglements demanded by user. If the demand size is not meant before the end time of the simulation, the success rate will drop."
+                                    tooltipPosition="top">
+                                    Success Rate</th>
+                                <th class="col table-secondary text-center"
+                                    pTooltip="This is the total classical channel delay incurred while executing the protocol."
+                                    tooltipPosition="top">
+                                    Latency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col text-center">{{performance.execution_time}}&nbsp;secs</td>
+                                <td class="col text-center">{{performance.fidelity}}</td>
+                                <td class="col text-center">{{performance.throughput}}%</td>
+                                <td class="col text-center">{{performance.latency}}&nbsp;secs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br>
+            <h5 class="text-center">
+                <p class="text-center">Entanglement is shared between two parties​</p>
+                <p class="text-center">Two party Quantum State</p>
+            </h5>
+
+            <!-- <div class="row"> -->
+            <table class="table table-bordered">
+                <thead class="table-primary">
+                    <tr>
+                        <td class="col"
+                            pTooltip="This is the quantum state of the final EPR pair generated at the remote end nodes.">
+                            Link EPR pair
+                        </td>
+                        <td class="col">
+                            State : {{data.alice_bob_entanglement}}​
+                        </td>
+                    </tr>
+                </thead>
+            </table>
+
+            <br>
+            <h6><u>Sender</u></h6>
+            <br>
+
+            <table class="table table-bordered">
+                <thead class="table-primary">
+                    <tr>
+                        <td class="col"
+                            pTooltip="This is the qubit that is intended to be teleported to the remote end user node.">
+                            Single Qubit state
+                        </td>
+                        <td class="col">
+                            {{data.random_qubit}}
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2" class="col"
+                            pTooltip="The classical measurement outcomes of the two qubits at Alice's end after their joint measurement. A joint measurement can be performed using a Beam Splitter and a pair of detectors one each at the output ports.">
+                            Classical Measurement results​
+                        </td>
+                        <td class="col" pTooltip="The measurement result of single qubit state to be teleported.">
+                            Outcome 1: {{data.meas_rq}}</td>
+                    </tr>
+                    <tr>
+
+                        <td class="col" pTooltip="The measurement result of EPR qubit at Alice's end.">Outcome 2:
+                            {{data.meas_alice}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <!-- <h5 class="text-center">
+                <p class="text-center">Quantum State of the qubit (at the receiver node) that should be teleported
+                    between
+                    two parties.​</p>​
+            </h5> -->
+            <h6
+                pTooltip="The end node which is receiving a teleported qubit using distributed EPR pair as the quantum resource.">
+                <u>Receiver</u>
+            </h6>
+            <br>
+            <table class="table table-bordered">
+                <thead class="table-primary">
+                    <tr>
+                        <td class="col"
+                            pTooltip="Quantum state of receiver's qubit of the pre-shared EPR pair as a result of the joint measurement performed at Alice's end.">
+                            Quantum state of Receiver's qubit
+                        </td>
+                        <td class="col">{{data.bob_initial_state}}</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col"
+                            pTooltip="The Pauli corrections that are to be applied on the qubit at receiver's end once the measurement outcomes are conveyed by Alice over a classical channel.">
+                            Corrective Unitary Transformations​
+                            ​</td>
+                        <td pTooltip="List of unitary quantum gates to be applied on receiver's qubit in sequence.">
+                            Pauli Corrections: {{data.Corrective_operation}}​</td>
+                    </tr>
+                    <tr>
+                        <td class="col"
+                            pTooltip="The teleported qubit at receiver's end node post the execution of teleportation protocol.">
+                            Qubit Received</td>
+                        <td class="col">{{data.bob_final_state}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- <p class="text-center">After getting the measurement result from sender, unitary operation will be applied
+                at
+                the receiver node.​</p> -->
+            <!-- </div> -->
+        </div>
+        <div *ngIf="app_id == 4">
+            <div class="display-4">
+                End-to-End GHZ
+            </div>
+            <br>
+            <div class="row">
+                <h5 class="text-center col-12">Performance parameters of the
+                    constructed network topology</h5>
+            </div>
+            <br>
+            <div class="col">
+                <div class="row">
+                    <table class="table table-bordered">
+                        <thead class="thead-light">
+                            <tr>
+                                <th class="col table-secondary text-center" pTooltip="Total run time of the simulation."
+                                    tooltipPosition="top">
+                                    Execution Time</th>
+                                <th class="col table-secondary text-center"
+                                    pTooltip="The final fidelity of distributed entanglement at the end nodes post swapping and purification."
+                                    tooltipPosition="top">
+                                    Fidelity</th>
+                                <th class="col table-secondary text-center"
+                                    pTooltip="The success percentage of the amount of entanglements distributed compared to the entanglements demanded by user. If the demand size is not meant before the end time of the simulation, the success rate will drop."
+                                    tooltipPosition="top">
+                                    Success Rate</th>
+                                <th class="col table-secondary text-center"
+                                    pTooltip="This is the total classical channel delay incurred while executing the protocol."
+                                    tooltipPosition="top">
+                                    Latency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col text-center">{{performance.execution_time}}&nbsp;secs</td>
+                                <td class="col text-center">{{performance.fidelity}}</td>
+                                <td class="col text-center">{{performance.throughput}}%</td>
+                                <td class="col text-center">{{performance.latency}}&nbsp;secs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br>
+            <h5 class="text-center">A three-party GHZ state is prepared by utilizing three two-party entanglements of
+                three end nodes with a
+                shared central service node.</h5>
+            <br>
+
+            <h5 class="text-center">The three end nodes, aiming to create a GHZ state among themselves, achieve a
+                quantum state of two-party entanglement facilitated by common central node as shown below.</h5>
+            <div class="row">
+                <div class="col">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="table-primary">
+                                <th class="col" pTooltip="The recipient node requesting a multi-qubit entanglement.">
+                                    Node 1
+                                </th>
+                                <th class="col" pTooltip="The quantum states of the EPR and GHZ qubits.">Quantum State
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col">
+                                    Initial Entanglement state (2 party)​
+                                </td>
+                                <td>State: {{data.initial_alice_state}}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Final Entangled State</td>
+                                <td>{{data.final_alice_state}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="table-primary">
+                                <th class="col" pTooltip="The recipient node requesting a multi-qubit entanglement.">
+                                    Node 2
+                                </th>
+                                <th class="col" pTooltip="The quantum states of the EPR and GHZ qubits.">Quantum State
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col">
+                                    Initial Entanglement state (2 party)​
+                                </td>
+                                <td>State: {{data.initial_bob_state}}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Final Entangled State</td>
+                                <td>{{data.final_bob_state}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="table-primary">
+                                <th class="col" pTooltip="The recipient node requesting a multi-qubit entanglement.">
+                                    Node 3
+                                </th>
+                                <th class="col" pTooltip="The quantum states of the EPR and GHZ qubits.">Quantum State
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col">
+                                    Initial Entanglement state (2 party)​
+                                </td>
+                                <td>State: {{data.initial_charlie_state}}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Final Entangled State</td>
+                                <td>{{data.final_charlie_state}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="app_id==7">
+            <div class="display-4 text-left col-9">
+                Arbitrary basis QSDC with mutual user authentication
+            </div>
+            <div class="row">
+                <h5 class="text-center col-12">Performance parameters of the
+                    constructed network topology</h5>
+                <!-- <div class="text-right col-2">
+                                <button class="btn btn-outline-primary" (click)="info_1()"><i class="pi pi-question"></i></button>
+                            </div> -->
+            </div>
+            <div class="row">
+                <table class="table table-bordered">
+                    <thead class="thead-light">
+                        <tr>
+                            <th class="col table-secondary text-center" pTooltip="Total run time of the simulation."
+                                tooltipPosition="top">
+                                Execution Time</th>
+                            <th class="col table-secondary text-center"
+                                pTooltip="The final fidelity of distributed entanglement at the end nodes post swapping and purification."
+                                tooltipPosition="top">
+                                Fidelity</th>
+                            <th class="col table-secondary text-center"
+                                pTooltip="The success percentage of the amount of entanglements distributed compared to the entanglements demanded by user. If the demand size is not meant before the end time of the simulation, the success rate will drop."
+                                tooltipPosition="top">
+                                Success Rate</th>
+                            <th class="col table-secondary text-center"
+                                pTooltip="This is the total classical channel delay incurred while executing the protocol."
+                                tooltipPosition="top">
+                                Latency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <!-- <td class="col text-center">{{nodeData.sender}}</td>
+                            <td class="col text-center">{{nodeData.receiver}}</td> -->
+
+                            <td class="col text-center">{{performance.execution_time}}&nbsp;secs</td>
+                            <td class="col text-center">{{performance.fidelity}}</td>
+                            <td class="col text-center">{{performance.throughput}}%</td>
+                            <td class="col text-center">{{performance.latency}}&nbsp;secs</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- <div class="text-right col-2">
+                <button class="btn btn-outline-primary" (click)="info_qsdc()" style="margin-top: 18px;"><i
+                        class="pi pi-question"></i></button>
+            </div> -->
+            <br>
+            <table class="table table-bordered">
+                <thead class="table-primary">
+                    <tr>
+                        <td class="col">
+                            Sender's Input Message
+                        </td>
+                        <td class="col">
+                            {{data.input_message}}
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-secondary">
+                        <td class="col">
+                            Security Check
+                        </td>
+                        <td class="col">
+                            {{data.Security_msg}}
+                        </td>
+                    </tr>
+                    <tr class="table-secondary">
+                        <td class="col">Identity Authentication (IdA)</td>
+                        <td class="col">{{data.IdA_msg}}</td>
+                    </tr>
+                    <tr class="table-secondary">
+                        <td class="col">
+                            Sender Key
+                        </td>
+                        <td class="col">
+                            {{alice_r}}
+                        </td>
+                    </tr>
+                    <tr class="table-secondary">
+                        <td class="col">
+                            Receiver Key
+                        </td>
+                        <td class="col">
+                            {{data.Bobs_r}}
+                        </td>
+                    </tr>
+                    <tr class="table-secondary">
+                        <td class="col">
+                            Identity Authentication Check
+                        </td>
+                        <td class="col">
+                            {{data.display_msg}}
+                        </td>
+                    </tr>
+                    <tr class="table-primary">
+                        <td class="col">
+                            Received message
+                        </td>
+                        <td class="col">
+                            {{data.bob_message}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div *ngIf="app_id==5">
+            <div class="row">
+                <div class="display-4 col-9 text-left">
+                    Seminal QSDC
+                </div>
+                <!-- <div class="text-right col-2">
+                    <button class="btn btn-outline-primary" (click)="info_qsdc()" style="margin-top: 18px;"><i
+                            class="pi pi-question"></i></button>
+                </div> -->
+            </div>
+
+            <br>
+            <br>
+            <div class="row">
+                <h5 class="text-center col-12">Performance parameters of the
+                    constructed network topology</h5>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <table class="table table-bordered">
+                        <thead class="thead-light">
+                            <tr>
+                                <th class="col table-secondary text-center" pTooltip="Total run time of the simulation."
+                                    tooltipPosition="top">
+                                    Execution Time</th>
+                                <th class="col table-secondary text-center"
+                                    pTooltip="The final fidelity of distributed entanglement at the end nodes post swapping and purification."
+                                    tooltipPosition="top">
+                                    Fidelity</th>
+                                <th class="col table-secondary text-center"
+                                    pTooltip="The success percentage of the amount of entanglements distributed compared to the entanglements demanded by user. If the demand size is not meant before the end time of the simulation, the success rate will drop."
+                                    tooltipPosition="top">
+                                    Success Rate</th>
+                                <th class="col table-secondary text-center"
+                                    pTooltip="This is the total classical channel delay incurred while executing the protocol."
+                                    tooltipPosition="top">
+                                    Latency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <!-- <td class="col text-center">{{nodeData.sender}}</td>
+                                <td class="col text-center">{{nodeData.receiver}}</td> -->
+
+                                <td class="col text-center">{{performance.execution_time}}&nbsp;secs</td>
+                                <td class="col text-center">{{performance.fidelity}}</td>
+                                <td class="col text-center">{{performance.throughput}}%</td>
+                                <td class="col text-center">{{performance.latency}}&nbsp;secs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div><br>
+            <h6><b>Result</b></h6>
+            <table class="table table-bordered">
+                <thead class="table-primary">
+                    <tr>
+                        <td class="col"
+                            pTooltip="The quantum key at senders end. The last two bits will be dropped for security check.">
+                            Sender's Transmitted Key
+                        </td>
+                        <td class="col">
+                            {{data.key_transmitted}}
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-secondary">
+                        <td class="col"
+                            pTooltip="True: if eavesdropping is detected, False: if no eavesdropping is detected.">
+                            Eavesdropping
+                        </td>
+                        <td class="col">
+                            {{data.eavesdrop}}
+                        </td>
+                    </tr>
+                    <tr class="table-secondary">
+                        <td class="col"
+                            pTooltip="This is used for security checking where the final two bits from the end of the generated quantum keys are checked.">
+                            Check Bits used for Eve Detection<i class="fa-solid fa-circle-info"
+                                style="color: #000000;"></i>
+                        </td>
+                        <td class="col">
+                            {{data.display_msg}}
+                        </td>
+                    </tr>
+                    <tr class="table-primary">
+                        <td rowspan="2" class="col" pTooltip="The final key after dropping off the check bits.">
+                            Key Received
+                        </td>
+                        <td class="col">
+                            Key after removing check bits : {{data.key_shared_received}}
+                        </td>
+                    </tr>
+                    <tr class="table-primary">
+                        <td class="col">Final Key  : {{data.final_key}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div *ngIf="app_id==6">
+            <div class="row">
+                <div class="display-4 text-left col-9">
+                    QSDC PingPong
+                </div>
+                <!-- <div class="text-right col-2">
+                    <button class="btn btn-outline-primary" (click)="info_qsdc()" style="margin-top: 18px;"><i
+                            class="pi pi-question"></i></button>
+                </div> -->
+            </div>
+            <div class="row">
+                <h5 class="text-center col-12">Performance parameters of the
+                    constructed network topology</h5>
+            </div>
+            <div class="row">
+                <table class="table table-bordered">
+                    <thead class="thead-light">
+                        <tr>
+                            <th class="col table-secondary text-center" pTooltip="Total run time of the simulation."
+                                tooltipPosition="top">
+                                Execution Time</th>
+                            <th class="col table-secondary text-center"
+                                pTooltip="The final fidelity of distributed entanglement at the end nodes post swapping and purification."
+                                tooltipPosition="top">
+                                Fidelity</th>
+                            <th class="col table-secondary text-center"
+                                pTooltip="The success percentage of the amount of entanglements distributed compared to the entanglements demanded by user. If the demand size is not meant before the end time of the simulation, the success rate will drop."
+                                tooltipPosition="top">
+                                Success Rate</th>
+                            <th class="col table-secondary text-center"
+                                pTooltip="This is the total classical channel delay incurred while executing the protocol."
+                                tooltipPosition="top">
+                                Latency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <!-- <td class="col text-center">{{nodeData.sender}}</td>
+                            <td class="col text-center">{{nodeData.receiver}}</td> -->
+
+                            <td class="col text-center">{{performance.execution_time}}&nbsp;secs</td>
+                            <td class="col text-center">{{performance.fidelity}}</td>
+                            <td class="col text-center">{{performance.throughput}}%</td>
+                            <td class="col text-center">{{performance.latency}}&nbsp;secs</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <h5>Execution Outputs:<u></u></h5>
+            <br>
+            <table class="table table-bordered">
+                <thead class="table-primary">
+                    <tr>
+                        <td class="col" pTooltip="The binary string of the input message sent by user.">
+                            Sender message
+                        </td>
+                        <td class="col">
+                            {{data.sender.message}}
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr class="table-secondary">
+                        <td class="col"
+                            pTooltip="True: if eavesdropping is detected, False: if no eavesdropping is detected.">
+                            Eavesdropping check
+                        </td>
+                        <td class="col">
+                            {{data.Eve_presence}}
+                        </td>
+                    </tr>
+                    <tr class="table-secondary">
+                        <td class="col"
+                            pTooltip="If non-ideal scenarios are induced while execution, the quantum message will have impurities. It returns True when any impurity is detected in the expected ideal received message.">
+                            Protocol m's Impurities
+                        </td>
+                        <td class="col">
+                            {{data.Impurities_presence}}
+                        </td>
+                    </tr>
+                    <tr class="table-secondary">
+                        <td colspan="2">(If Impurities present: Then display accuracy of transmission)​</td>
+                    </tr> -->
+                    <tr class="table-primary">
+                        <td class="col"
+                            pTooltip="The received message at the user end after the QSDC protocol is executed.">
+                            Received message
+                        </td>
+                        <td class="col">
+                            {{data.output_msg}}
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div *ngIf="app_id==8">
+            <div class="row">
+                <div class="display-2 text-left col-9">
+                    Single Photon QD
+                </div>
+                <!-- <div class="text-right col-2">
+                    <button class="btn btn-outline-primary" (click)="info('spqd')" style="margin-top: 18px;"><i
+                            class="pi pi-question"></i></button>
+                </div> -->
+            </div>
+            <br>
+            <div class="row">
+                <table class="table table-bordered">
+                    <thead class="thead-light">
+                        <tr>
+                            <th class="col table-secondary text-center" pTooltip="Total run time of the simulation."
+                                tooltipPosition="top">
+                                Execution Time</th>
+                            <th class="col table-secondary text-center"
+                                pTooltip="The final fidelity of distributed entanglement at the end nodes post swapping and purification."
+                                tooltipPosition="top">
+                                Fidelity</th>
+                            <th class="col table-secondary text-center"
+                                pTooltip="The success percentage of the amount of entanglements distributed compared to the entanglements demanded by user. If the demand size is not meant before the end time of the simulation, the success rate will drop."
+                                tooltipPosition="top">
+                                Success Rate</th>
+                            <th class="col table-secondary text-center"
+                                pTooltip="This is the total classical channel delay incurred while executing the protocol."
+                                tooltipPosition="top">
+                                Latency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col text-center">{{performance.execution_time}}&nbsp;secs</td>
+                            <td class="col text-center">{{performance.fidelity}}</td>
+                            <td class="col text-center">{{performance.throughput}}%</td>
+                            <td class="col text-center">{{performance.latency}}&nbsp;secs</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <div class="lead">
+                <strong>Sender Messages</strong>
+            </div>
+            <br>
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="table-primary">
+                        <td class="col">
+                            Participant 1: Sent message
+                        </td>
+                        <td class="col">
+                            Participant 2: Sent message
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col">
+                            {{data.input_message1}}
+                        </td>
+                        <td class="col">
+                            {{data.input_message2}}
+                        </td>
+                    </tr>
+                </thead>
+
+            </table>
+            <br>
+            <div class="lead">
+                <strong>Attack</strong>
+            </div>
+            <br>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr class="table-primary">
+                        <td class="col">
+                            Attack
+                        </td>
+                        <td class="col">
+                            Error Rate (%)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col">
+                            {{data.attack}}
+                        </td>
+                        <td class="col">
+                            {{data.error}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <div class="lead">
+                <strong>Received Messages</strong>
+            </div>
+            <br>
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="table-primary">
+                        <td class="col">
+                            Participant 1: Received Message<i class="fa-solid fa-circle-info"
+                                style="color: #000000;"></i>
+                        </td>
+                        <td class="col">
+                            Participant 2: Received Message<i class="fa-solid fa-circle-info"
+                                style="color: #000000;"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col">
+                            {{data.output_message1}}
+                        </td>
+                        <td class="col">
+                            {{data.output_message2}}
+                        </td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div *ngIf="app_id==9">
+            <div class="row">
+                <div class="display-4 text-left col-9">
+                    QSDC-Teleportation
+                </div>
+                <!-- <div class="text-right col-2">
+                    <button class="btn btn-outline-primary" (click)="info('qsdct')" style="margin-top: 18px;"><i
+                            class="pi pi-question"></i></button>
+                </div> -->
+            </div>
+            <br>
+            <div class="row">
+                <h5 class="text-center col-12">Performance parameters of the
+                    constructed network topology</h5>
+            </div>
+            <div class="row">
+                <table class="table table-bordered">
+                    <thead class="thead-light">
+                        <tr>
+                            <th class="col table-secondary text-center" pTooltip="Total run time of the simulation."
+                                tooltipPosition="top">
+                                Execution Time</th>
+                            <th class="col table-secondary text-center"
+                                pTooltip="The final fidelity of distributed entanglement at the end nodes post swapping and purification."
+                                tooltipPosition="top">
+                                Fidelity</th>
+                            <th class="col table-secondary text-center"
+                                pTooltip="The success percentage of the amount of entanglements distributed compared to the entanglements demanded by user. If the demand size is not meant before the end time of the simulation, the success rate will drop."
+                                tooltipPosition="top">
+                                Success Rate</th>
+                            <th class="col table-secondary text-center"
+                                pTooltip="This is the total classical channel delay incurred while executing the protocol."
+                                tooltipPosition="top">
+                                Latency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col text-center">{{performance.execution_time}}&nbsp;secs</td>
+                            <td class="col text-center">{{performance.fidelity}}</td>
+                            <td class="col text-center">{{performance.throughput}}%</td>
+                            <td class="col text-center">{{performance.latency}}&nbsp;secs</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <table class="table table-bordered">
+                <thead class="table-primary">
+                    <tr>
+                        <td class="col" pTooltip="The binary string of the input message sent by user.">
+                            Sent Message
+                        </td>
+                        <td class="col">
+                            {{data.input_message}}
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-secondary">
+                        <td class="col" pTooltip="Returns the type of attack detected/selected by user.">
+                            Attack
+                        </td>
+                        <td class="col">
+                            {{data.attack}}
+                        </td>
+                    </tr>
+                    <tr class="table-secondary">
+                        <td class="col"
+                            pTooltip="Returns the rate of error detected on the received message due to channel attacks.">
+                            Error Rate (%)
+                        </td>
+                        <td class="col">
+                            {{data.error}}
+                        </td>
+                    </tr>
+
+                    <tr class="table-primary">
+                        <td class="col"
+                            pTooltip="The received message at the user end after the QSDC protocol is executed.">
+                            Received Message
+                        </td>
+                        <td class="col">
+                            {{data.output_message}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div *ngIf="app_id==10">
+            <div class="display-4 text-left col-9">
+                MDI-QSDC with user authentication
+            </div>
+
+            <!-- <div class="text-right col-2">
+                <button class="btn btn-outline-primary" (click)="info_qsdc_1('ip1')" style="margin-top: 18px;"><i
+                        class="pi pi-question"></i></button>
+            </div> -->
+            <br>
+            <div class="row">
+                <h5 class="text-center col-12">Performance parameters of the
+                    constructed network topology</h5>
+            </div>
+            <div class="row">
+                <table class="table table-bordered">
+                    <thead class="thead-light">
+                        <tr>
+                            <th class="col table-secondary text-center" pTooltip="Total run time of the simulation."
+                                tooltipPosition="top">
+                                Execution Time</th>
+                            <th class="col table-secondary text-center"
+                                pTooltip="The final fidelity of distributed entanglement at the end nodes post swapping and purification."
+                                tooltipPosition="top">
+                                Fidelity </th>
+                            <th class="col table-secondary text-center"
+                                pTooltip="The success percentage of the amount of entanglements distributed compared to the entanglements demanded by user. If the demand size is not meant before the end time of the simulation, the success rate will drop."
+                                tooltipPosition="top">
+                                Success Rate</th>
+                            <th class="col table-secondary text-center"
+                                pTooltip="This is the total classical channel delay incurred while executing the protocol."
+                                tooltipPosition="top">
+                                Latency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col text-center">{{performance.execution_time}}&nbsp;secs</td>
+                            <td class="col text-center">{{performance.fidelity}}</td>
+                            <td class="col text-center">{{performance.throughput}}%</td>
+                            <td class="col text-center">{{performance.latency}}&nbsp;secs</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <table class="table table-bordered">
+                <thead class="table-primary">
+                    <tr>
+                        <td class="col"
+                            pTooltip="The message string that the user intends to send its node to a remote node.">
+                            Sender's Message
+                        </td>
+                        <td class="col">
+                            {{data.sender.message}}
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-secondary">
+                        <td class="col"
+                            pTooltip="This parameter gives a metric to the user to decide on how much information has leaked due to Eve attack.">
+                            Information Leaked
+                        </td>
+                        <td class="col">
+                            {{data.info_leak}}
+                        </td>
+                    </tr>
+                    <tr class="table-secondary">
+                        <td class="col" pTooltip="The sender's authentication ID shared via QKD.">Sender's
+                            Id</td>
+                        <td class="col">{{data.sender.userID}}</td>
+                    </tr>
+                    <tr class="table-secondary">
+                        <td class="col" pTooltip="The receiver's authentication ID shared via QKD.">
+                            Receiver's Id</td>
+                        <td class="col">{{data.receiver.userID}}</td>
+                    </tr>
+                    <tr class="table-secondary">
+                        <td class="col"
+                            pTooltip="A metric returning the quality of received message. Fidelity deteriorates with non-idealities.">
+                            Message Fidelity
+                        </td>
+                        <td class="col">
+                            {{data.msg_fidelity}}
+                        </td>
+                    </tr>
+                    <tr class="table-secondary">
+                        <td class="col"
+                            pTooltip="Returns the average error on the communication due to channel disturbances.">
+                            Average Error Rate (%)
+                        </td>
+                        <td class="col">
+                            {{data.avg_err}}
+                        </td>
+                    </tr>
+                    <tr class="table-primary">
+                        <td class="col"
+                            pTooltip="The message string received at the recipients node once the protocol is completely executed.">
+                            Receiver's Message
+                        </td>
+                        <td class="col">
+                            {{data.output_msg}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-primary btn-custom" (click)="downloadTxtFile()">Download Logs</button>
+        </div>
+    </div>
+
+</div>

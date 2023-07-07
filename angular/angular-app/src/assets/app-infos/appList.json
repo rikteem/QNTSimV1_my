@@ -1,0 +1,44 @@
+{
+    "appList": [
+        {
+            "appName": "End to end Bell Pairs",
+            "appId": 2
+        },
+        {
+            "appName": "End to end GHZ",
+            "appId": 4
+        },
+        {
+            "appName": "Quantum Teleportation",
+            "appId": 3
+        },
+        {
+            "appName": "Ekert 91 QKD",
+            "appId": 1
+        },
+        {
+            "appName": "Seminal QSDC",
+            "appId": 5
+        },
+        {
+            "appName": "PingPong QSDC",
+            "appId": 6
+        },
+        {
+            "appName": "Arbitrary Basis QSDC with user authentication",
+            "appId": 7
+        },
+        {
+            "appName": "Single Photon QD",
+            "appId": 8
+        },
+        {
+            "appName": "QSDC with Teleportation",
+            "appId": 9
+        },
+        {
+            "appName": "MDI-QSDC with user authentication",
+            "appId": 10
+        }
+    ]
+}

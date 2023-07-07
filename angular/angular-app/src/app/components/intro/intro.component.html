@@ -1,0 +1,762 @@
+<div class="container shadow p-1 mb-2 bg-white rounded mx-auto">
+    <div class="menu">
+
+
+        <div *ngIf="app=='1'" class="col-11">
+
+            <h1 class="display-1 text-center">Ekert 91 QKD </h1>
+            <div class="row">
+                <p class="col-11">Proposed in 1991 by Artur Ekert, E91 protocol is an entanglement-based protocol which
+                    uses
+                    Bell
+                    states
+                    shared between
+                    Alice and Bob for secure distribution of secret key . ​</p>
+                <div class="btn-group col-12 d-flex justify-content-center gap-2">
+                    <div>
+                        <button class="btn btn-primary btn-custom" routerLink="/advanced">Launch Application</button>
+                    </div>
+                    <div>
+                        <button *ngIf="routeFrom == 'minimal'" class="btn btn-primary btn-custom" (click)="route()">Go
+                            to
+                            Minimal</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-10">
+                    <p-steps [model]="items" [(activeIndex)]="activeIndex" [readonly]="false"></p-steps>
+                </div>
+            </div>
+            <br>
+            <h3 *ngIf="activeIndex==0" class="display-4 text-center"><small>SHARING BELL STATES</small></h3>
+            <div *ngIf="activeIndex==0">
+                <img class="img1" src="assets/images/e91/e91_1.webp" alt="...">
+                <p>Choose the sender and receiver from topology that was setup prior .The sender (Alice)
+                    and receiver
+                    (Bob)
+                    share n number
+                    of |ψ-⟩ bell states , where n depends on the length of the secret key to be generated.​</p>
+            </div>
+            <br>
+            <h3 *ngIf="activeIndex==1" class="display-4 text-center"><small>MEASURE AND RECORD RESULTS​</small></h3>
+            <div *ngIf="activeIndex==1">
+                <img class="img1" src="assets/images/e91/e91_2.webp" alt="...">
+                <br>
+                <p>Alice makes a measurement with a direction randomly chosen between Horizontal (X
+                    observable),Diagonal
+                    (W
+                    observable),Vertical (Z observable). Whereas Bob makes a measurement with a direction randomly
+                    chosen
+                    between Diagonal
+                    (W observable),Vertical (Z observable), Anti Diagonal (V observable). Alice and Bob record the
+                    measurement results .</p>
+            </div>
+            <br>
+            <h3 *ngIf="activeIndex==2" class="display-4 text-center">REVEALING THE BASES</h3>
+            <img class="img1" *ngIf="activeIndex==2" src="assets/images/e91/E91_Img3.webp" alt="">
+            <p *ngIf="activeIndex==2">Alice and Bob broadcast the measurement basis which they used, through the
+                classical channel .If Alice
+                and Bob have
+                measured the spin projections of the entangled pair of qubits onto the same direction (i.e. W--W or
+                Z--Z
+                for Alice's and
+                Bob's qubit respectively), then they are sure that they obtained opposite results. i.e. the results
+                will
+                be perfectly
+                anticorrelated and thus get their key string.​​
+                ​</p>
+            <br>
+        </div>
+        <div *ngIf="app=='2'" class="col-11">
+            <h1 class="display-1">End-to-end EPR pair distribution</h1>
+            <br>
+            <div class="row">
+                <p class="col-11">E2E (End to End entanglement) application is related to generate n-entangled pair of a
+                    target
+                    fidelity
+                    between two
+                    nodes, the source and the destination, those can be present anywhere in a given topology.</p>
+                <div class="btn-group col-12 d-flex justify-content-center gap-2">
+                    <div>
+                        <button class="btn btn-primary btn-custom" routerLink="/advanced">Launch Application</button>
+                    </div>
+                    <div>
+                        <button *ngIf="routeFrom == 'minimal'" class="btn btn-primary btn-custom" (click)="route()">Go
+                            to
+                            Minimal</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-10">
+                    <p-steps [model]="items" [(activeIndex)]="activeIndex" [readonly]="false"></p-steps>
+                </div>
+            </div>
+            <br>
+            <h3 *ngIf="activeIndex==0" class="display-4 text-center"><small>{{e2e.e2e1|uppercase}}</small></h3>
+            <div *ngIf="activeIndex==0">
+                <div class="text-center"><img class="img1" src="assets/images/e2e/e2e1.webp" alt="..." width="1000px">
+                </div>
+
+                <p>A source node will raise a request to generate n-entangled pair of a target fidelity between a
+                    destination node.​
+                    Routing algorithm will choose the best path from the source to destination between all possible
+                    paths.​​</p>
+            </div>
+            <br>
+            <h3 *ngIf="activeIndex==1" class="display-4 text-center"><small>{{e2e.e2e2|uppercase}}​</small></h3>
+            <div *ngIf="activeIndex==1">
+                <div class="text-center col-10">
+                    <img class="img1" src="assets/images/e2e/e2e2.webp" alt="..." width="1000px">
+                </div>
+
+
+                <p>After choosing the best path entanglement generation & will be completed in between all adjacent
+                    nodes. Entanglement
+                    swapping will be done in between intermediate nodes.​</p>
+            </div>
+            <br>
+            <h3 *ngIf="activeIndex==2" class="display-4 text-center">{{e2e.e2e3|uppercase}}</h3>
+            <div class="text-center col-10"><img class="img1" *ngIf="activeIndex==2" src="assets/images/e2e/e2e3.webp"
+                    alt="..." width="1000px"></div>
+
+            <p *ngIf="activeIndex==2">After entanglement swapping between the intermediate nodes end to end
+                entanglement
+                will be done in between the source &
+                destination node.​​​
+                ​</p>
+            <br>
+
+        </div>
+        <div *ngIf="app=='4'" class="col-11">
+            <h1 class="display-1">End to end GHZ</h1>
+            <div class="row">
+                <p class="col-11">GHZ (Greenberger–Horne–Zeilinger state )state is a three party non-classically
+                    correlated quantum
+                    state.
+                    This
+                    application is related to preparation of a three party entangled pair .​</p>
+                <div class="btn-group col-12 d-flex justify-content-center gap-2">
+                    <div>
+                        <button class="btn btn-primary btn-custom" routerLink="/advanced">Launch Application</button>
+                    </div>
+                    <div>
+                        <button *ngIf="routeFrom == 'minimal'" class="btn btn-primary btn-custom" (click)="route()">Go
+                            to
+                            Minimal</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-10">
+                    <p-steps [model]="items" [(activeIndex)]="activeIndex" [readonly]="false"></p-steps>
+                </div>
+            </div>
+            <h3 *ngIf="activeIndex==0" class="display-4 text-center"><small>CHOOSE SOURCE , DESTINATION AND CENTRAL
+                    NODES</small></h3>
+            <div *ngIf="activeIndex==0">
+                <div class="text-center">
+                    <img class="img1" src="assets/images/ghz/ghz1.webp" alt="...">
+                </div>
+                <p>Specify the three nodes (one source and two destinations) and one central node ( which is the
+                    approximately equidistant
+                    from three nodes and enough resources to get high fidelity entanglement) from the topology that
+                    was
+                    setup prior.​</p>
+            </div>
+            <h3 *ngIf="activeIndex==1" class="display-4 text-center"><small>TWO PARTY BELL STATES</small></h3>
+            <div *ngIf="activeIndex==1">
+                <div class="text-center">
+                    <img class="img1" src="assets/images/ghz/ghz-2.webp" alt="...">
+                </div>
+                <p>Three end to end 2 party entanglements are shared between central node and other three nodes. ​​
+                </p>
+            </div>
+            <h3 *ngIf="activeIndex==2" class="display-4 text-center"><small>GHZ MEASUREMENT</small></h3>
+            <div *ngIf="activeIndex==2">
+                <div class="text-center">
+                    <img class="img1" src="assets/images/ghz/ghz3.webp" alt="..." height="100px" width="100px">
+                </div>
+                <p>Now Central node performs the GHZ measurement and send the results over classical communication
+                    channel to the other
+                    three nodes involved. Based on received results all three parties perform Local corrective Pauli
+                    Operations and thus
+                    share GHZ state between them .​​</p>
+                <div class="text-center"><img src="assets/images/ghz/ghz_3-1.webp" alt="...">
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="app=='3'" class="col-11">
+            <h1 class="display-1">Quantum Teleportation</h1>
+            <br>
+            <div class="row">
+                <p class="col-11">TEL( Teleportation) protocol is regarding sharing an arbitrary quantum state between
+                    two parties with
+                    the
+                    help of
+                    entangled pair shared between them.​</p>
+                <div class="btn-group col-12 d-flex justify-content-center gap-2">
+                    <div>
+                        <button class="btn btn-primary btn-custom" routerLink="/advanced">Launch Application</button>
+                    </div>
+                    <div>
+                        <button *ngIf="routeFrom == 'minimal'" class="btn btn-primary btn-custom" (click)="route()">Go
+                            to
+                            Minimal</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="w-99">
+                    <p-steps [model]="items" [(activeIndex)]="activeIndex" [readonly]="false"></p-steps>
+                </div>
+            </div>
+            <h3 *ngIf="activeIndex==0" class="display-4 text-center"><small>{{tel.tel1|uppercase}}</small></h3>
+            <div *ngIf="activeIndex==0">
+                <div class="text-center">
+                    <img class="img1" src="assets/images/tel/tel1.webp" alt="..." width="1000px">
+                </div>
+                <p>The sender (Alice) wants to send quantum information (qubit state |ψ⟩=α|0⟩+β|1⟩) to receiver
+                    (Bob).
+                    Due to No-cloning
+                    theorem Alice cannot simply make an exact copy of an unknown quantum state and give the copy to
+                    Bob.
+                    We can only copy
+                    classical states (not superpositions).To transfer a quantum bit, Alice and Bob must share an
+                    entangled qubit pair.​​</p>
+                <br>
+            </div>
+            <h3 *ngIf="activeIndex==1" class="display-4 text-center"><small>{{tel.tel2|uppercase}}​</small></h3>
+            <div *ngIf="activeIndex==1">
+                <div class="text-center">
+                    <img class="img1" src="assets/images/tel/tel2.webp" alt="..." width="1000px">
+                </div>
+                <p>Alice then performs a Hadamard operation followed by a CNOT gate between a qubit it wants to
+                    send/teleport and the
+                    entangled qubit at Alice’s end . And then she measures the qubits out, which is called
+                    Bell-state
+                    measurement and sends
+                    the measurement results to Bob over a classical communication channel.​​</p>
+                <br>
+            </div>
+            <h3 *ngIf="activeIndex==2" class="display-4 text-center"><small>{{tel.tel3|uppercase}}</small></h3>
+            <div *ngIf="activeIndex==2">
+                <div class="text-center">
+                    <img class="img1" src="assets/images/tel/tel3.webp" alt="..." width="1000px">
+                </div>
+                <p>After Bob receives the message and he applies a corrective unitary operations (based on the
+                    results
+                    data that he gets
+                    from Alice ) on his entangled part of the qubit. The updated qubit that bob has now is the qubit
+                    that was at Alice’s end
+                    initially. We call this teleportation because, at the end , Bob will have |ψ⟩ and Alice won't
+                    anymore.​
+                    ​​</p>
+                <br>
+                <!-- <div class="text-center"><img class="img1" src="assets/images/tel1.webp" alt="..." width="1000px"> -->
+            </div>
+        </div>
+        <div *ngIf="app=='6'" class="col-11">
+            <h1 class="display-1">PingPong QSDC</h1>
+            <br>
+            <div class="row">
+                <p class="col-11">A QKD scheme using EPR pairs with each EPR pair carrying two bits of key code. This
+                    protocol is the
+                    seminal work on QSDC by G.L. Long and X.S. Liu <a href=""
+                        (click)="quant_ph('https://arxiv.org/pdf/quant-ph/0012056.pdf')">https://arxiv.org/pdf/quant-ph/0012056.pdf.</a>​
+                </p>
+                <div class="btn-group col-12 d-flex justify-content-center gap-2">
+                    <div>
+                        <button class="btn btn-primary btn-custom" routerLink="/advanced">Launch Application</button>
+                    </div>
+                    <div>
+                        <button *ngIf="routeFrom == 'minimal'" class="btn btn-primary btn-custom" (click)="route()">Go
+                            to
+                            Minimal</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-10">
+                    <p-steps [model]="items" [(activeIndex)]="activeIndex" [readonly]="false"></p-steps>
+                </div>
+            </div>
+            <h3 *ngIf="activeIndex==0" class="display-4 text-center"><small>Bob prepares EPR pairs and sends a sequence
+                    to Alice.</small></h3>
+            <div *ngIf="activeIndex==0">
+                <div class="text-center">
+                    <img class="img1" src="assets/images/pingpong/pp1.webp" alt="...">
+                </div>
+                <p>Bob prepares entangled qubits in |ψ+> state. He then makes two sequences separating one qubit out of
+                    each EPR pair created. Bob sends one sequence to Alice.​​</p>
+            </div>
+            <h3 *ngIf="activeIndex==1" class="display-4 text-center"><small>Alice applies unitary operators to encode
+                    the qubits.</small></h3>
+            <div *ngIf="activeIndex==1">
+                <div class="text-center">
+                    <img class="img1" src="assets/images/pingpong/pp2.webp" alt="...">
+                </div>
+                <p>Alice now adopts the transformation rule above and encodes the classical message bits into the qubits
+                    applying the respective transformations. She gets the transformed qubits.​ ​​
+                </p>
+            </div>
+            <h3 *ngIf="activeIndex==2" class="display-4 text-center"><small>Bob measures the qubits pairs and decodes
+                    Alice's message.</small></h3>
+            <div *ngIf="activeIndex==2">
+                <div class="text-center">
+                    <img class="img1" src="assets/images/pingpong/pp3.webp" alt="..." height="100px" width="100px">
+                </div>
+                <p>Alice sends the transformed qubits to Bob. Bob now along with his qubits form pairs with the
+                    transformed qubits and performs Bell state measurement. Based on the result, Bob decodes the message
+                    encoded by Alice. ​​​</p>
+                <!-- <div class="text-center"><img src="assets/images/ghz_3-1.webp" alt="..."> -->
+            </div>
+        </div>
+
+        <div *ngIf="app=='5'" class="col-11">
+            <h1 class="display-1">Seminal QSDC</h1>
+            <br>
+            <div class="row">
+                <p class="col-11">A QKD scheme using EPR pairs with each EPR pair carrying two bits of key code. This
+                    protocol is the
+                    seminal work on QSDC by G.L. Long and X.S. Liu <a href=""
+                        (click)="quant_ph('https://arxiv.org/pdf/quant-ph/0012056.pdf')">https://arxiv.org/pdf/quant-ph/0012056.pdf.</a>​
+                </p>
+                <div class="btn-group col-12 d-flex justify-content-center gap-2">
+                    <div>
+                        <button class="btn btn-primary btn-custom" routerLink="/advanced">Launch Application</button>
+                    </div>
+                    <div>
+                        <button *ngIf="routeFrom == 'minimal'" class="btn btn-primary btn-custom" (click)="route()">Go
+                            to
+                            Minimal</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-10">
+                    <p-steps [model]="items" [(activeIndex)]="activeIndex" [readonly]="false"></p-steps>
+                </div>
+            </div>
+            <h3 *ngIf="activeIndex==0" class="display-4 text-center"><small>Alice prepare the qubits</small></h3>
+            <div *ngIf="activeIndex==0">
+                <div class="text-center">
+                    <img class="img1" src="assets/images/qsdc1/qsdc1_1.webp" alt="...">
+                </div>
+                <p>Alice converts the classical message in binary string and inserts check bits in even position.​
+
+                    Then she prepares, N EPR pairs and encodes bit-pairs into EPR pairs by the above encoding rule.​
+
+                    Finally, she separates one qubit from each EPR pair and creates two sequences of N qubits.</p>
+            </div>
+            <h3 *ngIf="activeIndex==1" class="display-4 text-center"><small>Transmission of encoded qubits</small></h3>
+            <div *ngIf="activeIndex==1">
+                <div class="text-center">
+                    <img class="img1" src="assets/images/qsdc1/qsdc1_2.webp" alt="...">
+                </div>
+                <p>Alice sends Sequence 2 to Bob over the Quantum channel and informs Bob about the position of check
+                    bits via classical channel.​
+                </p>
+            </div>
+            <h3 *ngIf="activeIndex==2" class="display-4 text-center"><small>Alice and Bob checks for security</small>
+            </h3>
+            <div *ngIf="activeIndex==2">
+                <div class="text-center">
+                    <img class="img1" src="assets/images/qsdc1/qsdc1_3.webp" alt="..." height="100px" width="100px">
+                </div>
+                <p>Bob measure the check bits in computational (or Z) basis and and acknowledges Alice about his
+                    measurement. Alice now after measuring her set of check bits, compares the outcome with Bob and
+                    identifies for any Eavesdropping. ​​</p>
+
+            </div>
+
+            <div *ngIf="activeIndex==3">
+                <h3 class="display-4 text-center"><small>Bob decodes Alice's message</small></h3>
+                <div class="text-center">
+                    <img class="img1" src="assets/images/qsdc1/qsdc1_4.webp" alt="..." height="100px" width="100px">
+                </div>
+                <p>Upon successful Eavesdropping check, Alice now sends the remaining qubits to Bob via the Quantum
+                    channel.
+                    Bob now undergoes Bell State measurement on the qubit pairs and retrieves the binary string
+                    corresponding to the actual message.​​​​</p>
+
+            </div>
+        </div>
+        <div *ngIf="app=='7'" class="col-11">
+            <h1 class="display-1">Arbitrary Basis QSDC with user authentication</h1>
+            <div class="row">
+                <p class="text-justify col-11">A secure QSDC protocol using only one orthogonal basis of single-qubit
+                    states to
+                    encode classical
+                    message. This highly secure protocol developed by Goutam Paul and Nayana Das can be used for high
+                    security secure direct communication with no information leakage to any Eavesdropper
+
+                    ​<a href=""
+                        (click)="quant_ph('https://doi.org/10.1007/s10773-021-04952-4')">https://doi.org/10.1007/s10773-021-04952-4​</a>​
+                </p>
+                <div class="btn-group col-12 d-flex justify-content-center gap-2">
+                    <div>
+                        <button class="btn btn-primary btn-custom" routerLink="/advanced">Launch Application</button>
+                    </div>
+                    <div>
+                        <button *ngIf="routeFrom == 'minimal'" class="btn btn-primary btn-custom" (click)="route()">Go
+                            to
+                            Minimal</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-10">
+                    <p-steps [model]="items" [(activeIndex)]="activeIndex" [readonly]="false"></p-steps>
+                </div>
+            </div>
+
+            <div *ngIf="activeIndex==0">
+                <div *ngIf="step==1">
+                    <h3 class="display-4 text-center"><small></small></h3>
+                    <div class="text-center">
+                        <img class="img1" src="assets/images/ip1/IP1_1_1.webp" alt="...">
+                    </div>
+                    <p class="text-justify">Alice converts her classical message into binary bit string and inserts
+                        check bits. Then she encodes the classical bits using the above unitary transformations. ​</p>
+                </div>
+                <div *ngIf="step==2">
+                    <h3 class="display-4 text-center"><small></small></h3>
+                    <div class="text-center">
+                        <img class="img1" src="assets/images/ip1/IP1_1_2.webp" alt="...">
+                    </div>
+                    <p class="text-justify">Alice now prepares the encoded qubit sequence with Decoy states and Identity
+                        qubits to detect any Eavesdropping while transmission. She then sends the sequence to Bob.​</p>
+                </div>
+            </div>
+            <div *ngIf="activeIndex==1">
+                <div *ngIf="step==1">
+                    <h3 class="display-4 text-center"><small></small></h3>
+                    <div class="text-center">
+                        <img class="img1" src="assets/images/ip1/IP1_2_1.webp" alt="...">
+                    </div>
+                    <p class="text-justify">Alice now prepares the encoded qubit sequence with Decoy states to identify
+                        Eavesdropping while transmission. She then sends the sequence to Bob.​ ​</p>
+                </div>
+                <div *ngIf="step==2">
+                    <h3 class="display-4 text-center"><small></small></h3>
+                    <div class="text-center">
+                        <img class="img1" src="assets/images/ip1/IP1_2_2.webp" alt="...">
+                    </div>
+                    <p class="text-justify">Alice and Bob now communicates using a classical channel and checks for
+                        authenticity.They proceed only if the authentication is verified otherwise abort the
+                        protocol.​​</p>
+                </div>
+            </div>
+            <h3 *ngIf="activeIndex==2" class="display-4 text-center"><small></small></h3>
+            <div *ngIf="activeIndex==2">
+                <br>
+                <div class="text-center">
+                    <img class="img1" src="assets/images/ip1/IP1_3_1.webp" alt="...">
+                </div>
+                <p class="text-justify">Alice compares the measurement result of check bits for checking the integrity
+                    of message. Bob then applies transformations and measurement to retrieve the classical message.​</p>
+            </div>
+        </div>
+        <div *ngIf="app=='8'" class="col-12">
+            <h1 class="display-1">Single Photon QD</h1>
+            <div class="row">
+                <p class="text-justify col-12">A Quantum Dialogue protocol using single photons transmitted between the
+                    nodes by encoding messages through unitary
+                    rotations on the photons.This changes the state of the photons which results in it carrying the
+                    information to the receiver. The receiver then
+                    encodes their message through their unitary rotation and then, measures out the state of the photon.
+                    The measurement
+                    results,initial states and the initial messages of each party helps them to decode the message of
+                    the other.
+                    <br>
+                    The implementation refers to the research article:<a href=""
+                        (click)="quant_ph('https://iopscience.iop.org/article/10.1088/1009-1963/15/7/005 ')">https://iopscience.iop.org/article/10.1088/1009-1963/15/7/005</a>
+                </p>
+                <div class="btn-group col-12 d-flex justify-content-center gap-2">
+                    <div>
+                        <button class="btn btn-primary btn-custom" routerLink="/advanced">Launch Application</button>
+                    </div>
+                    <div>
+                        <button *ngIf="routeFrom == 'minimal'" class="btn btn-primary btn-custom" (click)="route()">Go
+                            to
+                            Minimal</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="row">
+                    <div class="col-11">
+                        <p-steps [model]="items" [(activeIndex)]="activeIndex" [readonly]="false"></p-steps>
+                    </div>
+                </div>
+            </div>
+            <h3 *ngIf="activeIndex==0" class="display-4 text-center"><small>PREPARATION AND MESSAGE ENCODING BY
+                    BOB</small></h3>
+            <div *ngIf="activeIndex==0">
+                <img class="img1" src="assets/images/spqd/spqd1.svg" alt="...">
+                <p class="text-justify">One of the party's (say Bob) prepares N batches of single photons, each in
+                    random initial states among |0>, |1>, |+> and
+                    |->. Then, Bob encodes his message (say, massage 1) into the photons by applying I and Y pauli gates
+                    for bit value
+                    '0' and '1',
+                    respectively, and keeps a record of the encodings and initial states of photons.</p>
+            </div>
+            <h3 *ngIf="activeIndex==1" class="display-4 text-center"><small>TRANSMISSION AND ALICE ENCODES​</small></h3>
+            <div *ngIf="activeIndex==1">
+                <img class="img1" src="assets/images/spqd/spqd2.svg" alt="...">
+                <br>
+                <p class="text-justify">Bob now and sends the photons to the next party (say, Alice). The receiver would
+                    select N-1 random photon batches in order to measure and verify the
+                    integrity of the channel.
+                    Bob and Alice mutually
+                    verifies the measurement and
+                    decides to proceed if
+                    the error values lie within acceptance level.
+                    Now the second partner
+                    (here Alice) would encode their message (say message 2)
+                    in the same scheme as in step 1. Bob calls Alice now and informs the initial states of photons to
+                    her in that batch.</p>
+            </div>
+            <h3 *ngIf="activeIndex==2" class="display-4 text-center">MEASUREMENT AND DIALOGUE</h3>
+            <img class="img1" *ngIf="activeIndex==2" src="assets/images/spqd/spqd3.svg" alt="">
+            <p *ngIf="activeIndex==2">Alice now measures the photons and
+                shares this measurement
+                outcomes over
+                the public channel with Bob. With the classical information received from Bob and her measurement
+                results, Alice decodes Message 1 sent by Bob. Similarly, Bob uses the information about the measurement
+                outcomes sent by Alice, his encoding and the information on the initial states to decode the
+                Alice's message.</p>
+        </div>
+        <div *ngIf="app=='9'" class="col-12">
+            <h1 class="display-1">QSDC with Teleportation</h1>
+            <br>
+            <div class="row">
+                <p class="text-justify col-11">Quantum Information of an unknown quantum state of a two-level particle
+                    is communicated from Alice to Bob using
+                    pre-shared entanglements and teleportation in presence of a supervisor Charlie. Alice encodes the
+                    secret message
+                    directly on her sequence of particle states and transmits them to Bob. The protocol developed by T.
+                    Gao, F L Yan and Z X
+                    Wang has a unique feature where communication between two sides depends on the agreement of a third
+                    side.
+                    <a href=""
+                        (click)="quant_ph('https://iopscience.iop.org/article/10.1088/1009-1963/14/5/006/meta')">https://iopscience.iop.org/article/10.1088/1009-1963/14/5/006/meta</a>
+                </p>
+
+                <div class="btn-group col-12 d-flex justify-content-center gap-2">
+                    <div>
+                        <button class="btn btn-primary btn-custom" routerLink="/advanced">Launch Application</button>
+                    </div>
+                    <div>
+                        <button *ngIf="routeFrom == 'minimal'" class="btn btn-primary btn-custom" (click)="route()">Go
+                            to
+                            Minimal</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-10">
+                    <p-steps [model]="items" [(activeIndex)]="activeIndex" [readonly]="false"></p-steps>
+                </div>
+            </div>
+            <br>
+            <h3 *ngIf="activeIndex==0" class="display-4 text-center"><small>PREPARING SHARED EN​TANGLEMENT​</small></h3>
+            <div *ngIf="activeIndex==0">
+                <img class="img1" src="assets/images/qsdctel/qtel1.svg" alt="...">
+                <p class="text-justify">The protocol requires 3 parties to come together. For instance say, Charlie
+                    share a 3-qubit
+                    entanglement with Alice, Bob and himself.​ This entanglement can also be shared by someone like
+                    David where he prepares the entanglement and shares the qubits with Alice, Bob and Charlie.</p>
+            </div>
+            <br>
+            <h3 *ngIf="activeIndex==1" class="display-4 text-center"><small>ALICE ENCODES THE MESSAGE​</small></h3>
+            <div *ngIf="activeIndex==1">
+                <img class="img1" src="assets/images/qsdctel/qtel2.svg" alt="...">
+                <br>
+                <p class="text-justify">The protocol is performed by controlled teleportation meaning there is
+                    teleportation happening but in
+                    a controlled manner which ultimately enables the protocol execution. Alice now encodes the original
+                    classical
+                    messages with a pre-decided encoding scheme and performs appropriate transformation in her entangled
+                    set of qubits. Then she creates message
+                    qubits in accordance to the encoded sequence meaning the message qubit is prepared in |+> state if
+                    the encoded entangled qubit is also in |+> state. </p>
+            </div>
+            <br>
+            <h3 *ngIf="activeIndex==2" class="display-4 text-center">MEASUREMENT AND DECODING</h3>
+            <img class="img1" *ngIf="activeIndex==2" src="assets/images/qsdctel/qtel3.svg" alt="">
+            <p *ngIf="activeIndex==2">Now, once this preparation is completed, Charlie measures her entangled set of
+                qubits in computational basis. He now communicates his result to Alice and Bob via a classical channel.
+                This is the step where trust on Charlie is expected. With Charlie's measurement been done, Alice
+                performs Joint Measurement (or Bell state measurement)​​ on her qubit pairs and communicates her result
+                to Bob via Classical channel. Finally Bob uses this information from Alice and Charlie to perform
+                corrective operations on her qubits to decode the original message that was been sent.
+                ​</p>
+            <br>
+        </div>
+        <div *ngIf="app=='10'" class="col-12">
+            <h1 class="display-4">MDI-QSDC with user authentication</h1>
+            <div class="row">
+                <p class="text-justify col-12 mb-2">This is a new theoretical scheme for measurement device independent
+                    quantum secure direct communication (MDI-QSDC) with
+                    user authentication, where both the sender and the receiver first check the authenticity of the
+                    other party and then
+                    exchange the secret message.
+                    <br>
+                    Link: <a href=""
+                        (click)="quant_ph('https://link.springer.com/article/10.1007/s11128-022-03572-z')">https://link.springer.com/article/10.1007/s11128-022-03572-z</a>
+                    <br>
+                </p>
+                <div class="btn-group col-12 d-flex justify-content-center gap-2 mb-2">
+                    <div>
+                        <button class="btn btn-primary btn-custom" routerLink="/advanced">Launch Application</button>
+                    </div>
+                    <div>
+                        <button *ngIf="routeFrom == 'minimal'" class="btn btn-primary btn-custom" (click)="route()">Go
+                            to
+                            Minimal</button>
+                    </div>
+                </div>
+                <p class="text-justify text-center col-12">
+                    Let Alice (Identity IdA = 1011) be the sender and Bob (Identity IdB = 0111) be the receiver of the
+                    secret message.
+                </p>
+                <br>
+                <div class="row">
+                    <div class="col-11">
+                        <p-steps [model]="items" [(activeIndex)]="activeIndex" [readonly]="false"></p-steps>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div *ngIf="activeIndex == 0">
+                    <br>
+                    <h3 class="display-4 text-center text-uppercase">
+                        Initialisation
+                    </h3>
+                    <img style="margin-left:10vh;" class="img-fluid" src="assets/images/ip2_pd/ip2_1.jpg" alt="...">
+                    <hr>
+                    <img style="margin-left:10vh;" class="img-fluid" src="assets/images/ip2_pd/ip2_2.jpg" alt="...">
+                    <img style="margin-left:10vh;" class="img-fluid" src="assets/images/ip2_pd/ip2_3.jpg" alt="...">
+                    <p class="text-justify">
+                        Let the secret message of Alice be “Hello”. In the initialisation phase, Alice converts her
+                        message into binary
+                        bitstring m and inserts some random check bits into m. On the other side Bob prepares EPR pairs
+                        and sends all the first
+                        qubits to Alice along with some decoy qubits.
+                    </p>
+                    <br>
+                </div>
+                <div *ngIf="activeIndex == 1">
+                    <br>
+                    <h3 class="display-4 text-center text-uppercase">
+                        Encoding Process
+                    </h3>
+                    <br>
+                    <img style="margin-left:10vh;" src="assets/images/ip2_pd/ip2_4.jpg" alt="..." class="img-fluid">
+                    <img style="margin-left:10vh;" src="assets/images/ip2_pd/ip2_5.jpg" alt="..." class="img-fluid">
+                    <br>
+                    <p class="text-justify">
+                        Alice encodes the received qubits by applying the Pauli unitary operators. She then sends the
+                        encoded qubit sequence to
+                        the untrusted third party along with some new decoy qubits.
+                    </p>
+                    <br>
+                </div>
+                <div *ngIf="activeIndex == 2">
+                    <br>
+                    <h3 class="display-4 text-center text-uppercase">
+                        Security Check
+                    </h3>
+                    <br>
+                    <img style="margin-left:10vh;" src="assets/images/ip2_pd/ip2_6.jpg" alt="..." class="img-fluid">
+                    <br>
+                    <p class="text-justify">
+                        Alice, Bob and UTP checks the security of the channel between them. If all the quantum channels
+                        between Alice-UTP,
+                        Bob-UTP and Bob-Alice are secure, then they continue the protocol. Otherwise, they abort the
+                        protocol.
+                    </p>
+                    <br>
+                </div>
+                <div *ngIf="activeIndex == 3">
+                    <br>
+                    <h3 class="display-4 text-center text-uppercase">
+                        Authentication check
+                    </h3>
+                    <img style="margin-left:10vh;" src="assets/images/ip2_pd/ip2_7.jpg" alt="..." class="img-fluid">
+                    <br>
+                    <p class="text-justify">
+                        UTP measures the qubits corresponding to Alice’s and Bob’s identities and announces the result.
+                        Then Alice and Bob check
+                        the authenticity of each other.
+                    </p>
+                    <br>
+                </div>
+                <div *ngIf="activeIndex == 4">
+                    <br>
+                    <h3 class="display-4 text-center text-uppercase">
+                        Decoding Process
+                    </h3>
+                    <br>
+                    <img style="margin-left:10vh;" src="assets/images/ip2_pd/ip2_8.jpg" alt="..." class="img-fluid">
+                    <br>
+                    <p class="text-justify">
+                        UTP measures the qubits corresponding to Alice’s message and announces the results. From the
+                        measurement results, Bob
+                        decodes the message bit string. Alice and Bob do the message integrity check by comparing the
+                        check bits. Bob discards
+                        the check bits and from the remaining binary string he gets the exact secret message “Hello”.
+                    </p>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="d-flex justify-content-center button-group ">
+            <button type="button" *ngIf="app!=7 && activeIndex==1 || app!=7 && activeIndex==2"
+                class="btn btn-primary btn-custom mx-2" (click)="previous()">Previous</button>
+            <button type="button" *ngIf="app!=7 && activeIndex==0 ||app!=7 && activeIndex==1"
+                class="btn btn-primary btn-custom mx-2" (click)="next()">Next</button>
+            <button type="button" *ngIf="app==5 && activeIndex==2" class="btn btn-primary btn-custom mx-2"
+                (click)="next()">Next</button>
+            <button type="button" *ngIf="app==5 && activeIndex==3" class="btn btn-primary btn-custom mx-2"
+                (click)="previous()">Previous</button>
+            <button type="button" *ngIf="app!=5 && app!=10 && activeIndex==2" class="btn btn-primary btn-custom mx-2"
+                (click)="goto()">Launch Application</button>
+            <button type="button" *ngIf="app==5 && activeIndex==3" class="btn btn-primary btn-custom mx-2"
+                (click)="goto()">Launch Application</button>
+            <button type="button" *ngIf="step==1 && app==7 && activeIndex==0 ||step==1 && app==7 && activeIndex ==1"
+                class="btn btn-primary btn-custom mx-2" (click)="nextStep()">Next</button>
+            <button type="button" *ngIf="step==2 && app==7 && activeIndex==0 ||step==2 && app==7 && activeIndex ==1"
+                class="btn btn-primary btn-custom mx-2" (click)="previousStep()">Previous</button>
+            <button type="button" *ngIf="step==2 && app==7 && activeIndex==0 ||step==2 && app==7 && activeIndex ==1"
+                class="btn btn-primary btn-custom mx-2" (click)="next()">Next</button>
+            <br>
+            <button type="button" *ngIf=" app==10 && activeIndex==3 || app==10 && activeIndex == 4"
+                class="btn btn-primary btn-custom mx-2" (click)="previous()">
+                Previous
+            </button>
+            <button type="button" *ngIf=" app==10 && activeIndex==2 || app==10 && activeIndex ==3"
+                class="btn btn-primary btn-custom" (click)="next()">Next</button>
+            <button type="button" *ngIf=" app==10 && activeIndex==4" class="btn btn-primary btn-custom"
+                (click)="goto()">Launch Application</button>
+
+        </div>
+        <div style=" padding: 10px;">
+        </div>
+    </div>
+</div>

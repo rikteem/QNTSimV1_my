@@ -1,0 +1,13 @@
+{
+    "service_node":[],
+    "end_node":{"n0": "n0"},
+    "qconnections":[{"node1":"n0",
+                     "node2":"n0",
+                     "attenuation":0,
+                     "distance":0
+                    }],
+    "cchannels_table": {"type": "RT",
+                        "labels": ["n0"],
+                        "table": [[0]]
+                       }
+}

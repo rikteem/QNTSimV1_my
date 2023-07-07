@@ -1,0 +1,54 @@
+{
+    "nodes": [
+        {
+            "key": "node1",
+            "color": "lightblue"
+        },
+        {
+            "key": "node2",
+            "color": "orange"
+        },
+        {
+            "key": "node3",
+            "color": "orange"
+        },
+        {
+            "key": "node4",
+            "color": "orange"
+        },
+        {
+            "key": "node5",
+            "color": "lightblue"
+        },
+        {
+            "key": "node6",
+            "color": "lightblue"
+        }
+    ],
+    "links": [
+        {
+            "from": "node1",
+            "to": "node2"
+        },
+        {
+            "from": "node2",
+            "to": "node3"
+        },
+        {
+            "from": "node3",
+            "to": "node4"
+        },
+        {
+            "from": "node4",
+            "to": "node2"
+        },
+        {
+            "from": "node5",
+            "to": "node4"
+        },
+        {
+            "from": "node6",
+            "to": "node3"
+        }
+    ]
+}

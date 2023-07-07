@@ -1,0 +1,39 @@
+<table id="Measurements">
+    <caption><h3>Measurements</h3></caption>
+    <tr>
+        <th>Node 1</th>
+        <td>{{ node1 }}</td>
+    </tr>
+    <tr>
+        <th>Node 2</th>
+        <td>{{ node2 }}</td>
+    </tr>
+    <tr>
+        <th>Node 3</th>
+        <td>{{ node3 }}</td>
+    </tr>
+    <tr>
+        <th>GHZ State</th>
+        {% for ghz_state_i in ghz_state %}
+        <td>{{ ghz_state_i }}</td>
+        {% endfor %}
+    </tr>
+</table>
+
+{% comment %} 
+<br>
+<table id="stats">
+    <caption><h3>Statistics</h3></caption>
+
+    <tr>
+        <th>Key Length</th>
+        <td>{{ keyLength }}</td>
+    </tr>
+    <tr>
+        <th>Mismatched keys</th>
+        <td>{{ mismatch }}</td>
+    </tr><tr>
+        <th>Correlation value</th>
+        <td>{{ correlation }}</td>
+    </tr>
+</table> {% endcomment %}

@@ -1,0 +1,16 @@
+{'EndNode':{'frquency':2e4,
+            'coherence_time':0,
+            'efficiency':1,
+            'raw_fidelity':0.95
+           },
+ 'ServiceNode':{'frquency':2e4,
+                'coherence_time':0,
+                'efficiency':1,
+                'raw_fidelity':0.95
+               },
+ 'BSMNode':{'efficiency':0.9,
+            'count_rate':5e7,
+            'time_resolution':100
+           },
+ 'qchannel':[1e-5, 1e11]
+}

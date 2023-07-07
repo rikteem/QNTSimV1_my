@@ -1,0 +1,11 @@
+<nav id="navbar-parallax" class="navbar navbar-expand-lg nav-custom sticky-top">
+    <div class="row">
+        <div class="col">
+            <img src="assets/images/qnt-logo.png" alt="" class="home-img" routerLink="/">
+        </div>
+        <div class="d-flex justify-content-end align-items-center btn-group col">
+            <a *ngFor="let item of list" class="text-white mx-3" [routerLink]="item.link">{{item.header}}</a>
+            <!-- <a class="btn text-white apps mx-2" routerLink="/applications/">Applications</a> -->
+        </div>
+    </div>
+</nav>

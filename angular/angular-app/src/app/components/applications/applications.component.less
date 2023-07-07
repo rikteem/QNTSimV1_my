@@ -1,0 +1,386 @@
+// :root {
+//     --gradient: linear-gradient(to left top, #DD2476 10%, #FF512F 90%) !important;
+
+// }
+
+.mr-2 {
+    border-radius: 9px !important;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    // width: 90%;
+    height: 100%;
+}
+
+.container_copy .img-apps {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.blog_post {
+    margin-top: 4rem;
+    background: #fff;
+    max-width: 40%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2 !important;
+}
+
+.container_copy {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    min-height: 25em;
+}
+
+
+
+p {
+    text-align: justify;
+}
+
+.container_copy h1 {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 1rem 0;
+    font-size: 2.5rem;
+    letter-spacing: 0.5px;
+    color: #333;
+    transform: translateY(4em);
+    transition: 0.5s;
+}
+
+.container_copy:hover h1 {
+    transform: translateY(40px);
+    transition: 0.5s;
+}
+
+.container_copy p {
+    margin: 0 0 3rem 0;
+    font-size: 1rem;
+    line-height: 1.45;
+    color: #333;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+
+}
+
+.container_copy:hover p {
+
+    transform: translateY(20%);
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.container_copy:hover .img-apps {
+    border: 1px solid #fff;
+    filter: blur(20px);
+    transition: 0.5s;
+}
+
+.custom-container {
+    // width: 1000px;
+    height: 80%;
+    color: transparent;
+    background: transparent;
+    position: relative;
+    display: flex;
+    overflow-x: scroll;
+    justify-content: space-between;
+}
+
+.card {
+    position: relative;
+    cursor: pointer;
+    background: transparent;
+}
+
+.card .face {
+    width: 300px;
+    height: 200px;
+    transition: 0.5s;
+}
+
+.card .face.face1 {
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+}
+
+.card:hover .face.face1 {
+    background: #fff;
+    transform: translateY(0);
+}
+
+.card .face.face1 .content {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.card:hover .face.face1 .content {
+    opacity: 1;
+}
+
+.custom-container {
+    color: transparent !important;
+
+}
+
+.card .face.face1 .content img {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.card .face.face1 .content h3 {
+    margin: 10px 0 0;
+    padding: 0;
+    color: #000;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.card .face.face2 {
+    position: relative;
+    background: #fff;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100px);
+}
+
+.card:hover .face.face2 {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.card:hover h3 {
+    color: white;
+
+}
+
+.card .face.face2 .content p {
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+.carousal {
+    min-height: 70vh;
+}
+
+.card .face.face2 .content a {
+    margin: 15px 0 0;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 900;
+    color: #333;
+    padding: 5px;
+    border: 1px solid #333;
+}
+
+.card .face.face2 .content a:hover {
+    background: #333;
+    color: #fff;
+}
+
+h6 {
+    padding: 0 !important;
+}
+
+.bg {
+    background-color: black;
+    color: black;
+}
+
+.breadcrumb {
+    background-color: transparent;
+}
+
+
+
+.row {
+    z-index: 1;
+}
+
+p-breadcrumb {
+    background-color: transparent;
+}
+
+// container-fluid {
+//     display: flex;
+// }
+
+// a {
+//     color: #072155;
+// }
+
+// .card-img-top {
+//     object-fit: fill;
+//     // width: 254px !important;
+//     height: 230px !important;
+// }
+
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #97DEFF;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    font-weight: bold;
+    // margin-top: 40px;
+    letter-spacing: 4px;
+}
+
+.btn-1 {
+    height: 70px;
+}
+
+.btn:hover,
+.btn:focus {
+    background: #97DEFF;
+    color: #000;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 0 5px #97DEFF,
+        0 0 25px #97DEFF,
+        0 0 50px #97DEFF,
+        0 0 100px #97DEFF;
+}
+
+span {
+    position: absolute;
+    display: block;
+}
+
+button span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #97DEFF);
+    animation: btn-anim1 2s linear infinite;
+    // animation-duration: 2s;
+}
+
+
+
+button span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #97DEFF);
+    animation: btn-anim2 2s linear infinite;
+    animation-delay: .5s;
+
+}
+
+
+
+button span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #97DEFF);
+    animation: btn-anim3 2s linear infinite;
+    animation-delay: 1s;
+    // animation-duration: 2s;
+}
+
+
+
+button span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #97DEFF);
+    animation: btn-anim4 2s linear infinite;
+    animation-delay: 1.5s;
+
+}
+
+
+
+.p-scrollpanel {
+    border-width: thick;
+    border: #222;
+
+    &.custombar1 {
+        .p-scrollpanel-wrapper {
+            border-right: 9px solid blue;
+        }
+
+        .p-scrollpanel-bar {
+            background-color: blue;
+            opacity: 1;
+            transition: background-color .2s;
+
+            &:hover {
+                background-color: #007ad9;
+            }
+        }
+    }
+
+    &.custombar2 {
+        .p-scrollpanel-wrapper {
+            border-right: 9px solid blue;
+            border-bottom: 9px solid black;
+        }
+
+        .p-scrollpanel-bar {
+            background-color: black;
+            border-radius: 2;
+            opacity: 1;
+            transition: background-color .2s;
+        }
+    }
+
+
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    // gap: 32px !important;
+}
+
+.container-md {
+    width: 70%
+}
+
+.p-scrollpanel-bar-y {
+    background-color: blue;
+    opacity: 1;
+    // transition: background-color .2s;
+}
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

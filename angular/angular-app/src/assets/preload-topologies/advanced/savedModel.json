@@ -1,0 +1,108 @@
+{
+    "class": "GraphLinksModel",
+    "linkFromPortIdProperty": "fromPort",
+    "linkToPortIdProperty": "toPort",
+    "modelData": {
+        "position": "-475.300048828125 -322.5"
+    },
+    "nodeDataArray": [
+        {
+            "text": "node1",
+            "figure": "Ellipse",
+            "size": "75 75",
+            "fill": "#FBFFB1",
+            "key": -1,
+            "loc": "-240 -280",
+            "description": "Entanglement-swapping nodes (similar to classical routers) connect non-neighbor nodes\n but don't support request creation or application hosting."
+        },
+        {
+            "text": "node2",
+            "figure": "Circle",
+            "size": "75 75",
+            "fill": "#7D8F69",
+            "key": -2,
+            "loc": "-420 -280",
+            "description": "Origin or destination nodes for user/application requests, each connected to one service node."
+        },
+        {
+            "text": "node3",
+            "figure": "Circle",
+            "size": "75 75",
+            "fill": "#7D8F69",
+            "key": -3,
+            "loc": "-60 -280",
+            "description": "Origin or destination nodes for user/application requests, each connected to one service node."
+        },
+        {
+            "text": "node4",
+            "figure": "Circle",
+            "size": "75 75",
+            "fill": "#7D8F69",
+            "key": -4,
+            "loc": "-240 -100",
+            "description": "Origin or destination nodes for user/application requests, each connected to one service node."
+        }
+    ],
+    "linkDataArray": [
+        {
+            "from": -2,
+            "to": -1,
+            "fromPort": "",
+            "toPort": "L",
+            "points": [
+                -382.5,
+                -280,
+                -372.5,
+                -280,
+                -330,
+                -280,
+                -330,
+                -280,
+                -287.5,
+                -280,
+                -277.5,
+                -280
+            ]
+        },
+        {
+            "from": -1,
+            "to": -3,
+            "fromPort": "",
+            "toPort": "",
+            "points": [
+                -202.5,
+                -280,
+                -192.5,
+                -280,
+                -150,
+                -280,
+                -150,
+                -280,
+                -107.5,
+                -280,
+                -97.5,
+                -280
+            ]
+        },
+        {
+            "from": -1,
+            "to": -4,
+            "fromPort": "",
+            "toPort": "",
+            "points": [
+                -240,
+                -242.5,
+                -240,
+                -232.5,
+                -240,
+                -190,
+                -240,
+                -190,
+                -240,
+                -147.5,
+                -240,
+                -137.5
+            ]
+        }
+    ]
+}

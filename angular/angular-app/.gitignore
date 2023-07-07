@@ -1,0 +1,6 @@
+/node_modules
+documentation
+\.angular
+/.angular
+dist/
+/environments/environment.ts

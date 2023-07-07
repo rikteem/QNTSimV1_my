@@ -1,0 +1,42 @@
+<div class="content-wrapper shadow p-3 mb-3 bg-transparent">
+
+    <div class="d-flex justify-content-center btn-1">
+
+        <button class="btn" (click)="scroll()"><span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Try our Applications
+        </button>
+    </div>
+    <div class="card-container">
+        <div id="container_copy" *ngFor="let item of appDescription" class="mb-3">
+            <div class="container_copy mx-2">
+                <img class="img-apps" src="/assets/images/apps.jpg" alt="...">
+                <h1 class="display-6 text-white text-center">{{item.title}}</h1>
+                <p class="text-white mt-auto text-justify px-2">{{item.description}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="apps" class="col-12 md:col-4">
+        <p-carousel [value]="data" [numVisible]="4" [numScroll]="1" [circular]="true" contentClass="carousal"
+            [autoplayInterval]="5000" [responsiveOptions]="responsiveOptions">
+            <ng-template let-data pTemplate="item">
+                <div class="card" (click)="app(data.appId,data.appName)">
+                    <div class="face face1">
+                        <div class="content">
+                            <img class="mx-auto" [src]="data.image">
+                            <h3>{{data.appName}}</h3>
+                        </div>
+                    </div>
+                    <div class="face face2">
+                        <div class="content">
+                            <p>{{data.content}}</p>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </p-carousel>
+    </div>
+</div>

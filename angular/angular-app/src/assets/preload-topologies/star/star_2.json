@@ -1,0 +1,26 @@
+{
+    "nodes": [
+        {
+            "key": "node1",
+            "color": "lightblue"
+        },
+        {
+            "key": "node2",
+            "color": "orange"
+        },
+        {
+            "key": "node3",
+            "color": "lightblue"
+        }
+    ],
+    "links": [
+        {
+            "from": "node1",
+            "to": "node2"
+        },
+        {
+            "from": "node2",
+            "to": "node3"
+        }
+    ]
+}

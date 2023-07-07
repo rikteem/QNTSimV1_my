@@ -1,0 +1,5 @@
+numpy
+matplotlib
+json5
+pandas
+qutip

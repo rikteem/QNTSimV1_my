@@ -1,0 +1,39 @@
+<h3>E2E Application Parameters</h3>
+<form id="appSettings">
+    <label for="sender">Select Sender: </label>
+    <select name="sender" id="sender">
+        {% for node in nodes %}
+        <option value="{{node}}">{{node}}</option>
+        {% endfor %}
+    </select>
+
+    <label for="receiver">Select Receiver: </label>
+    <select name="receiver" id="receiver">
+        {% for node in nodes %}
+        <option value="{{node}}">{{node}}</option>
+        {% endfor %}
+    </select>
+
+    <label for="startTime">Start Time: </label>
+    <input type="text" name="startTime" id="startTime" value="1e12">
+    <label for="size">Size: </label>
+    <input type="text" name="size" id="size">
+    <label for="priority">Priority: </label>
+    <input type="text" name="priority" id="priority">
+    <label for="targetFidelity">Target Fidelity: </label>
+    <input type="text" name="targetFidelity" id="targetFidelity">
+    <label for="timeout">Timeout: </label>
+    <input type="text" name="timeout" id="timeout">
+
+</form>
+
+<footer>
+    <h4>e2e           : End to End entanglement generation between any two nodes </h4>
+    <h4>Sender        : Source node in the network where entanglement request starts</h4>
+    <h4>Receiver      : Destination node in the network where entanglement request ends </h4>
+    <h4>startTime     : The request arrival time </h4>
+    <h4>Size          : No.of entanglements requested </h4>
+    <h4>Priority      : Priority of the request </h4>
+    <h4>targetFidelity: The minimum required fidelity of the requested entanglements </h4>
+    <h4>timeout       : From startTime the time window within which entanglements need to be generated </h4>
+</footer>

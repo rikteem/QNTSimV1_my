@@ -1,0 +1,137 @@
+a:hover,
+a:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+.configuration {
+    height: calc(90vh);
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.loader-body {
+    height: 100vh;
+    z-index: 2;
+    width: 99vw;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-12%, -50%);
+    background: transparent;
+    // filter: grayscale(60%);
+    // background-repeat: no-repeat;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+// .mask-dialog {
+//     padding: 0% !important;
+//     background: #072155 !important;
+//     color: #072155 !important;
+// }
+
+
+#toggle-button1,
+#toggle-button2 {
+    transition: transform 0.3s ease-in-out;
+}
+
+
+
+.col-custom-3 {
+    flex: 0 0 auto;
+    width: 24.6%;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+#toggle-button1.active,
+#toggle-button2.active {
+    transform: rotate(180deg);
+}
+
+.loader-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-30%, -50%);
+    color: skyblue;
+    font-size: 1.4rem;
+    font-family: arial, sans-serif;
+}
+
+.loader-text:after {
+    content: 'Loading';
+    animation: load 2s linear infinite;
+}
+
+.loader-img {
+    position: absolute;
+    top: 40%;
+    left: 49%;
+    transform: translate(-35%, -70%);
+    animation-name: glow;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+.paragraph {
+    font-family: roboto, sans-serif;
+    color: #eee;
+    position: absolute;
+    top: 175px;
+    font-size: 1.4em;
+    letter-spacing: 0.15em;
+    font-weight: 100;
+    filter: drop-shadow(2px 2px 15px #ffffff70);
+}
+
+#accordion .panel-body {
+    padding: 10px 30px 10px 30px;
+    margin-left: 40px;
+    background: #fff;
+    border-top: none;
+    font-size: 15px;
+    color: #6f6f6f;
+    line-height: 28px;
+    letter-spacing: 1px;
+}
+
+@keyframes load {
+    0% {
+        content: 'Loading';
+    }
+
+    33% {
+        content: 'Loading.';
+    }
+
+    67% {
+        content: 'Loading..';
+    }
+
+    100% {
+        content: 'Loading...';
+    }
+}
+
+@keyframes glow {
+    0% {
+        opacity: 1
+    }
+
+    50% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+.row {
+    margin: 0 !important;
+}

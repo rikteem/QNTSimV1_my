@@ -1,0 +1,27 @@
+<h3>IP1 Application Parameters</h3>
+<form id="appSettings">
+
+    <label for="sender">Select Sender: </label>
+    <select name="sender" id="sender">
+        {% for node in nodes %}
+        <option value="{{node}}">{{node}}</option>
+        {% endfor %}
+    </select>
+
+    <label for="receiver">Select Receiver: </label>
+    <select name="receiver" id="receiver">
+        {% for node in nodes %}
+        <option value="{{node}}">{{node}}</option>
+        {% endfor %}
+    </select>
+
+    <label for="message">Message: </label>
+    <input type="text" name="message" id="message">
+
+</form>
+<footer>
+    <h4>IP Protocol    : Quantum Secure Direct Communication with Mutual Authentication via Rotation of an arbitrary basis </h4>
+    <h4>Sender         : A node in the network Topology</h4>
+    <h4>Receiver       : A node in the network Topology</h4>
+    <h4>Message        : The bit string message that needs to be transmitted from sender to receiver </h4>
+</footer>

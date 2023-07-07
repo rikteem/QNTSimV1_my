@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{% block title %}{% endblock %}</title>
+
+	{% load static %}
+	<link href="{% static '/assets/purpleBuzz/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static '/assets/purpleBuzz/css/boxicon.min.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/assets/purpleBuzz/css/templatemo.css' %}">
+    <link rel="stylesheet" href="{% static '/assets/purpleBuzz/css/custom.css' %}">
+	<link rel="stylesheet" href="{% static '/css/all.css' %}">
+	<link rel="stylesheet" href="{% static '/css/headings.css' %}">
+	<link rel="stylesheet" href="{% static '/css/table.css' %}">
+	<link rel="stylesheet" href="{% static '/css/form.css' %}">
+	<link rel="stylesheet" href="{% static '/css/nav.css' %}">
+	<link rel="stylesheet" href="{% static '/css/image.css' %}">
+	<script src="{% static '/js/jquery.min.js' %}"></script>
+	<script src="{% static '/js/app.js' %}"></script>
+	
+
+</head>
+<body>
+	<nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow">
+        <div class="container d-flex align-items-center">
+			<div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="navbar-toggler-success">
+				<div class="navbar align-self-left d-flex">
+
+					<a class="nav-link " href="https://www.qulabs.ai/"><img src="{% static '/assets/images/QNTSim-removebg-preview.png' %}" width="150" height="50" alt=""></a>
+				
+				</div>
+				<div class="flex-fill mx-xl-5 mb-2">
+					<!--<a href="#">
+						<img src="{% static '/assets/images/QNTSim-removebg-preview.png' %}" width="120" height="40" alt="">
+					  </a>-->
+					
+					<ul class="nav navbar-nav d-flex mx-xl-5">
+						<!--<li class="nav-item">
+							<a href="https://www.qulabs.ai/"><img id="logo" src="{% static '/assets/images/QNTSim.png' %}"></img></a>
+						</li>-->
+						
+						<li class="nav-item">
+							<a class="nav-link btn-outline-primary rounded-pill px-5" href="/">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link btn-outline-primary rounded-pill px-5" href="/apps">Apps</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+    </nav>
+
+	<section class="container overflow-hidden py-5">
+        <div class="row gx-5 gx-sm-3 gx-lg-5 gy-lg-5 gy-3 pb-3 projects">
+			<div id="qntsimForm">
+
+				<div class="tab">
+					
+					<h5 class="banner-heading h3 text-secondary display-3 mb-0 pb-5 mx-0 px-0 light-300 typo-space-line">
+						Define Nodes
+					</h5>
+					<table id="nodes">
+						<thead>
+							<th>Name</th>
+							<th>Type</th>
+							<th>No of Memories</th>
+							<th>Memory Frequency (Hz)</th>
+							<th>Memory Expiry Time (ps)</th>
+							<th>Memory Efficiency</th>
+							<th>Memory Fidelity</th>
+							<th>Actions</th>
+						</thead>
+						<tbody></tbody>
+					</table>
+					<!--<button type="button" class="addRow">Add Node</button>-->
+					<a class="banner-button btn rounded-pill btn-outline-primary btn-md px-4 addRow" role="button">Add Node</a>
+
+					{% comment %} <h4>Quantum memorys's Parameters at a Each Node:</h4>
+					<h4>Memory's Frequency  (Units:Hz)</h4>
+					<h4>Memory's Expiry Time(Units:seconds ,precision:picoseconds)</h4>
+					<h4>Memory's Efficiency (Efficiency &lt;1) </h4>
+					<h4>Memory's Fidelity(Fidelity &lt;1)</h4> {% endcomment %}
+					<div class="description">
+						<p class="banner-body text-muted py-3 mx-0 px-0">
+							Quantum memory parameters at a Each Node:<br>
+							<br><b>fidelity</b>: fidelity of memory
+							<br><b>frequency</b>:maximum frequency at which memory can be excited
+							<br><b>efficiency</b>:probability of emitting a photon when excited
+							<br><b>expiry time</b>: lifetime of the entangled pair stored in this quantum memory
+						</p>
+					</div>
+				</div>
+				<div class="tab">
+
+					<h5 class="banner-heading h3 text-secondary display-3 mb-0 pb-5 mx-0 px-0 light-300 typo-space-line">
+						Create Quantum Connections
+					</h5>
+
+					<table id="qc">
+						<thead>
+							<th>Node 1</th>
+							<th>Node 2</th>
+							<th>Attenuation</th>
+							<th>Distance</th>
+							<th>Actions</th>
+						</thead>
+						<tbody></tbody>
+					</table>
+					<!--<button type="button" class="addRow">Add QC</button>-->
+					<a class="banner-button btn rounded-pill btn-outline-primary btn-md px-4 addRow" role="button">Add QC</a>
+
+					<!--<h4>Quantum Channel Connection (between Node 1 and Node 2):</h4>
+					<h4>Node 1: A node in the Network</h4>
+					<h4>Node 2: A node in the Network</h4>
+					<h4>Attenuation: Attenuation of channel</h4>
+					<h4>Distance:length of channel(Units:km)</h4>-->
+					
+
+					<div class="description">
+						<p class="banner-body text-muted py-3 mx-0 px-0">
+							Optical Quantum Channel Connection (between Node 1 and Node 2):<br>
+							<br><b>Node 1: </b> A node in the Network	
+							<br><b>Node 2: </b> A node in the Network
+							<br><b>Attenuation: </b> attenuation of Optical channel's fiber (in dB/m).
+							<br><b>Distance: </b> length of the fiber (in km)
+						</p>
+					</div>
+
+				</div>
+				{% comment %} <div class="tab">
+					<h3>Create Virtual Connections</h3>
+
+					<table id="vc">
+						<thead>
+							<th>Node 1</th>
+							<th>Node 2</th>
+							<th>Demand Size</th>
+							<th>Actions</th>
+						</thead>
+						<tbody></tbody>
+					</table>
+					<!---TODO: Virtual Links Documention hyperlink-->
+					<button type="button" class="addRow">Add Node</button>
+					<p>Virtual links creations between Node 1 and Node 2</p>
+					<h4>Virtual link : Pre-established entanglements in network</h4>
+					<h4>Node 1: A node in the Network</h4>
+					<h4>Node 2: A node in the Network</h4>
+					<h4>Demand Size:No.of entanglements of the virtual link </h4>
+
+				</div> {% endcomment %}
+				<div class="tab">
+					
+					<h5 class="banner-heading h3 text-secondary display-3 mb-0 pb-5 mx-0 px-0 light-300 typo-space-line">
+						Create Classical Connections
+					</h5>
+
+					<table id="cc">
+					</table>
+
+					<div class="description">
+						<p class="banner-body text-muted py-3 mx-0 px-0">
+							<b>classical channel delay: </b> delay (in ps) of message transmission (default distance / light_speed).
+						</p>
+					</div>
+					
+				</div>
+				<div class="tab">
+					
+					<h5 class="banner-heading h3 text-secondary display-3 mb-0 pb-5 mx-0 px-0 light-300 typo-space-line">
+						Visualise Topology
+					</h5>
+
+					<div class= "center" id="topoGraph">
+					</div>
+					<div class="description">
+						<p class="banner-body text-muted py-3 mx-0 px-0">
+							Graphical representation of the network consiting of all nodes and channels we introduced in previous section
+						</p>
+					</div>
+				</div>
+
+				<div class="tab">
+					<div id="appConf">
+						<input name="app" id="app" value="{% block app %}{% endblock %}" hidden>
+						{% block appConf %}{% endblock %}
+					</div>
+				</div>
+
+				<div class="tab">
+					<h5 class="banner-heading h3 text-secondary display-3 mb-0 pb-5 mx-0 px-0 light-300 typo-space-line">
+						Results
+					</h5>
+					<div id="results"></div>
+				</div>
+				
+				<div id="error"></div>
+
+				<div style="overflow:auto;">
+					<div style="float:right;">
+						<!--<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>-->
+						<a class="banner-button btn rounded-pill btn-outline-primary btn-md px-4 addRow" id="prevBtn" onclick="nextPrev(-1)" role="button">Previous</a>
+						<!--<button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>-->
+						<a class="banner-button btn rounded-pill btn-outline-primary btn-md px-4 addRow" id="nextBtn" onclick="nextPrev(1)" role="button">Next</a>
+					</div>
+				</div>
+
+				<div class="steps" style="text-align:center;margin-top:40px;">
+					<!-- <span class="step"></span> -->
+					<span class="step rounded-pill">Nodes</span>
+					<span class="step rounded-pill">Quantum Connections</span>
+					{% comment %} <span class="step">Create Virtual Connections</span> {% endcomment %}
+					<span class="step rounded-pill">Classical Connections</span>
+					<span class="step rounded-pill">Visualise</span>
+					<span class="step rounded-pill">Parameters</span>
+					<span class="step rounded-pill">Results</span>
+				</div>
+			</div>
+		</div>
+    </section>
+</body>
+</html>

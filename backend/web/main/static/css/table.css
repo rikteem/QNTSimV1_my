@@ -1,0 +1,26 @@
+table {
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0.5em auto;
+    position: relative;
+    text-align: center;
+    caption-side: top;
+}
+
+table td, table th {
+    padding-left: 8px;
+}
+table thead tr {
+    height: 60px;
+    background: #FFED86;
+    font-size: 1em;
+}
+table tbody tr {
+    height: 48px;
+    border-bottom: 1px solid #E3F1D5;
+    font-size: 0.7em;
+}

@@ -1,0 +1,728 @@
+.row-1 {
+    width: 99%;
+    background-color: white;
+    // margin: auto;
+    // margin-top: 5%;
+}
+
+#comp {
+    position: relative;
+}
+
+.col-md-1,
+.col-md-2 {
+    display: flex;
+    align-items: flex-end;
+}
+
+.btn-custom {
+    // margin-top: 36px;
+    align-items: flex-end !important;
+}
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 40%;
+    left: 50%;
+    z-index: 10000000;
+}
+
+.lds-dual-ring:after {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #072155;
+    border-color: #072155 transparent #072155 transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.row1 {
+    padding-right: 1%;
+    // width: 99.9%;
+    // padding-top: 10px;
+    width: 99%;
+    text-align: center;
+}
+
+.info {
+    height: 2rem;
+    width: 2rem;
+}
+
+.toolbox {
+    z-index: 100000;
+    position: absolute;
+    top: 25%;
+    left: 3%
+}
+
+.popover2 {
+    position: absolute !important;
+    bottom: -140px !important;
+    left: 480px !important;
+    // left: 30%;
+
+    // background-color: var(--bg-color);
+}
+
+.btn-group1 {
+    display: flex !important;
+    align-items: flex-end !important;
+    // align-items: flex-end;
+}
+
+// .small {
+//     z-index: 1058;
+//     position: absolute;
+//     top: 70%;
+//     width: 100px;
+//     left: 3%
+// }
+small {
+    height: min-content;
+}
+
+.btn-group1 {
+    margin-top: 2%;
+    // float: right;
+    height: min-content;
+}
+
+.lock {
+    // padding-top: 3%;
+    margin-bottom: 1%;
+    // margin-left: 3%;
+}
+
+.sidebar {
+    margin-top: 100px;
+    margin-bottom: 80px;
+}
+
+.palette {
+    position: relative;
+}
+
+.diagram {
+    position: relative;
+}
+
+
+// @keyframes spinner {
+//     to {
+//         transform: rotate(360deg);
+//     }
+// }
+
+// .spinner:before {
+//     content: '';
+//     box-sizing: border-box;
+//     position: absolute;
+//     top: 50%;
+//     left: 48%;
+//     width: 30px;
+
+//     height: 30px;
+//     margin-top: -10px;
+//     margin-left: -10px;
+//     border-radius: 50%;
+//     border: 2px solid #ffffff;
+//     border-top-color: #000000;
+//     animation: spinner .8s linear infinite;
+// }
+.loader-body {
+    height: calc(100vh - 85px);
+    z-index: 2;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -49%);
+    background: transparent;
+    // filter: grayscale(60%);
+    // background-repeat: no-repeat;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.ui-dialog .ui-dialog-titlebar {
+    display: none !important;
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 160px;
+    width: 170px;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+}
+
+// #step2 {
+//     overflow: hidden;
+//     overflow-y: scroll;
+// }
+
+.toggle-button-cover {
+    display: table-cell;
+    position: relative;
+    width: 200px;
+    height: 140px;
+    box-sizing: border-box;
+}
+
+.button-cover {
+    height: 100px;
+    margin: 20px;
+    background-color: #fff;
+    box-shadow: 0 10px 20px -8px #c5d6d6;
+    border-radius: 4px;
+}
+
+.button-cover:before {
+    counter-increment: button-counter;
+    content: counter(button-counter);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #d7e3e3;
+    font-size: 12px;
+    line-height: 1;
+    padding: 5px;
+}
+
+.button-cover,
+.knobs,
+.layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.button {
+    position: relative;
+    top: 50%;
+    width: 74px;
+    height: 36px;
+    margin: -20px auto 0 auto;
+    overflow: hidden;
+}
+
+.button.r,
+.button.r .layer {
+    border-radius: 100px;
+}
+
+.button.b2 {
+    border-radius: 2px;
+}
+
+.checkbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.knobs {
+    z-index: 2;
+}
+
+.layer {
+    width: 100%;
+    background-color: #ebf7fc;
+    transition: 0.3s ease all;
+    z-index: 1;
+}
+
+#button-3 .knobs:before {
+    content: "YES";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 20px;
+    height: 10px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    padding: 9px 4px;
+    background-color: #03a9f4;
+    border-radius: 50%;
+    transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+}
+
+#button-3 .checkbox:active+.knobs:before {
+    width: 46px;
+    border-radius: 100px;
+}
+
+#button-3 .checkbox:checked:active+.knobs:before {
+    margin-left: -26px;
+}
+
+#button-3 .checkbox:checked+.knobs:before {
+    content: "NO";
+    left: 42px;
+    background-color: #f44336;
+}
+
+#button-3 .checkbox:checked~.layer {
+    background-color: #fcebeb;
+}
+
+.configuration {
+    border: 1px solid black;
+
+    max-height: calc(100vh - 100px);
+    overflow: hidden;
+    overflow-y: auto;
+    border-radius: 3px;
+}
+
+.mask-dialog {
+    padding: 0% !important;
+    background: #072155 !important;
+    color: #072155 !important;
+}
+
+.loader-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-30%, -50%);
+    color: skyblue;
+    font-size: 1.4rem;
+    font-family: arial, sans-serif;
+}
+
+.loader-text:after {
+    content: 'Loading';
+    animation: load 2s linear infinite;
+}
+
+.loader-img {
+    position: absolute;
+    top: 40%;
+    left: 49%;
+    transform: translate(-35%, -70%);
+    animation-name: glow;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+.circle {
+    border: 5px transparent solid;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 69%;
+}
+
+.cyan {
+    top: 0px;
+    border-top: 5px cyan solid;
+    animation-delay: 4s;
+    animation: cyan 1.5s infinite;
+}
+
+/*:after element = circle at the end of each line.
+:before element = cap in be start of each line*/
+.cyan:after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: cyan;
+    border-radius: 69%;
+    right: 5px;
+    top: 10px;
+    box-shadow: 0px 0px 20px cyan;
+}
+
+.cyan:before {
+    content: " ";
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    background: cyan;
+    top: 10px;
+    left: 11px;
+    border-radius: 69%;
+}
+
+.magenta {
+    left: 0px;
+    bottom: 0px;
+    border-top: 5px magenta solid;
+    animation: magenta 1.5s infinite;
+}
+
+#sample {
+    position: relative;
+}
+
+.magenta:after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: magenta;
+    border-radius: 69%;
+    right: 5px;
+    top: 10px;
+    box-shadow: 0px 0px 20px magenta;
+}
+
+.magenta:before {
+    content: " ";
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    background: magenta;
+    top: 10px;
+    left: 11px;
+    border-radius: 69%;
+}
+
+.yellow {
+    right: 0px;
+    bottom: 0px;
+    border-top: 5px yellow solid;
+    animation: yellow 1.5s infinite;
+}
+
+.yellow:after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: yellow;
+    border-radius: 69%;
+    right: 5px;
+    top: 10px;
+    box-shadow: 0px 0px 20px yellow;
+}
+
+.yellow:before {
+    content: " ";
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    background: yellow;
+    top: 10px;
+    left: 11px;
+    border-radius: 69%;
+}
+
+@keyframes cyan {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes magenta {
+    0% {
+        transform: rotate(240deg);
+    }
+
+    100% {
+        transform: rotate(600deg);
+    }
+}
+
+@keyframes yellow {
+    0% {
+        transform: rotate(120deg);
+    }
+
+    100% {
+        transform: rotate(480deg);
+    }
+}
+
+.paragraph {
+    font-family: roboto, sans-serif;
+    color: #eee;
+    position: absolute;
+    top: 175px;
+    font-size: 1.5em;
+    letter-spacing: 0.15em;
+    font-weight: 100;
+    filter: drop-shadow(2px 2px 15px #ffffff70);
+}
+
+
+
+#tutorial1 {
+    position: absolute;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    z-index: 100001;
+    height: 150px;
+    width: 200px;
+    background: #3B71CA;
+    border-radius: 10%;
+    left: 12%;
+    bottom: 15%;
+    animation: fadeIn 2s ease-in;
+}
+
+// @media only screen and (min-width:968px) {
+//     #tutorial1 {
+//         bottom: 18% !important;
+//     }
+
+//     #tutorial2 {
+//         left: 12% !important;
+//         top: 26% !important;
+//         width: 20% !important;
+//     }
+
+//     #tutorial3 {
+//         left: 12% !important;
+//         top: 40% !important;
+//         width: 20% !important;
+//     }
+// }
+
+// @media screen and (min-width:900px) {
+//     #tutorial1 {
+//         bottom: 20% !important;
+//     }
+
+//     #tutorial2 {
+//         left: 12% !important;
+//         top: 25% !important;
+//         width: 20% !important;
+//     }
+
+//     #tutorial3 {
+//         left: 12% !important;
+//         top: 39% !important;
+//         width: 20% !important;
+//     }
+// }
+
+// @media screen and (min-width:1080px) {
+//     #tutorial1 {
+//         bottom: 20% !important;
+//     }
+
+//     #tutorial2 {
+//         left: 12% !important;
+//         top: 25% !important;
+//         width: 20% !important;
+//     }
+
+//     #tutorial3 {
+//         left: 12% !important;
+//         top: 39% !important;
+//         width: 20% !important;
+//     }
+// }
+
+#tutorial2 {
+    position: absolute;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    z-index: 100001;
+    height: 50px;
+    width: 240px;
+    background: #3B71CA;
+    border-radius: 8px;
+    left: 140px !important;
+    top: 7%;
+    animation: fadeIn 2s ease-in;
+}
+
+#tutorial3 {
+    position: absolute;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    z-index: 100001;
+    height: 50px;
+    width: 240px;
+    background: #3B71CA;
+    border-radius: 8px;
+    left: 140px !important;
+    top: 30%;
+    // bottom: 25%;
+    animation: fadeIn 2s ease-in;
+}
+
+#tutorial4 {
+    position: absolute;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    z-index: 100001;
+    height: 50px;
+    width: 280px;
+    background: #3B71CA;
+    border-radius: 8px;
+    left: 140px !important;
+    top: 45%;
+    // bottom: 25%;
+    animation: fadeIn 2s ease-in;
+}
+
+#tutorial5 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    z-index: 3;
+    height: 450px;
+    width: 800px;
+    background: red;
+    border-radius: 10px;
+}
+
+// .img-container {
+//     height: 35%;
+//     width: 45%;
+// }
+
+#tutorial5 img {
+    position: relative;
+    // top: 10%;
+    left: 6%;
+    height: 350px;
+    width: 700px;
+    aspect-ratio: 18/9;
+    // object-fit: cover;
+    object-position: 80% 80%;
+}
+
+h6 {
+    padding: 10px;
+    color: white;
+}
+
+.btn-custom:hover {
+    color: yellow !important;
+    background-color: #072155 !important;
+}
+
+
+.btn-custom1 {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+}
+
+.btn-custom2 {
+    position: absolute;
+    bottom: 23%;
+    // right: 7%;
+}
+
+#tutorial2 {
+    position: absolute;
+
+}
+
+#tutorial2::after {
+    content: '';
+    position: absolute;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 20px solid #3B71CA;
+    z-index: 100002;
+    right: 100%;
+    top: 30%;
+}
+
+#tutorial3::after {
+    content: '';
+    position: absolute;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 20px solid #3B71CA;
+    z-index: 100002;
+    right: 100%;
+    top: 30%;
+}
+
+#tutorial4::after {
+    content: '';
+    position: absolute;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 20px solid #3B71CA;
+    z-index: 100002;
+    right: 100%;
+    top: 30%;
+}
+
+@keyframes load {
+    0% {
+        content: 'Loading';
+    }
+
+    33% {
+        content: 'Loading.';
+    }
+
+    67% {
+        content: 'Loading..';
+    }
+
+    100% {
+        content: 'Loading...';
+    }
+}
+
+@keyframes glow {
+    0% {
+        opacity: 1
+    }
+
+    50% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}

@@ -1,0 +1,46 @@
+<table id="teleportation_results">
+    <caption><h3>Teleportation results</h3></caption>
+    <tr>
+        <th>Alice Bob entanglement</th>
+        {% for alice_bob_entanglement_i in alice_bob_entanglement %}
+        <td>{{ alice_bob_entanglement_i }}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th>Random Qubit</th>
+        {% for random_qubit_i in random_qubit %}
+        <td>{{ random_qubit_i }}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th>MEAS RQ</th>
+        <td>{{ meas_rq }}</td>
+    </tr>
+    <tr>
+        <th>MEAS R1</th>
+        <td>{{ meas_r1 }}</td>
+    </tr>
+    <tr>
+        <th>Bob Initial State</th>
+        {% for bob_initial_state_i in bob_initial_state %}
+        <td>{{ bob_initial_state_i }}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th>Bob Final State</th>
+        {% for bob_final_state_i in bob_final_state %}
+        <td>{{ bob_final_state_i }}</td>
+        {% endfor %}
+    </tr>
+</table>
+
+<!--<div class="description">
+    <p class="banner-body text-muted py-3 mx-0 px-0">
+        <br><b>Alice Bob entanglement:</b> Alice and Bob are entangled bell State
+        <br><b>Random Qubit:</b> Random Qubit alice wants to send to bob
+        <br> Classical message (Measurement results at alice's end) send to bob
+        <br><b>MEAS RQ:</b> Measurement Result at random qubit 
+        <br><b>MEAS R1:</b> Measurement Result at entangled qubit
+        <br><b>Bob Initial State</b> Bob State before Corrective measures
+    </p>
+</div>-->

@@ -1,0 +1,36 @@
+<h3>GHZ Application Parameters</h3>
+<form id="appSettings">
+
+    <label for="endnode1">Select Node 1: </label>
+    <select name="endnode1" id="endnode1">
+        {% for node in nodes %}
+        <option value="{{node}}">{{node}}</option>
+        {% endfor %}
+    </select>
+    <label for="endnode2">Select Node 2: </label>
+    <select name="endnode2" id="endnode2">
+        {% for node in nodes %}
+        <option value="{{node}}">{{node}}</option>
+        {% endfor %}
+    </select>
+    <label for="endnode3">Select Node 3: </label>
+    <select name="endnode3" id="endnode3">
+        {% for node in nodes %}
+        <option value="{{node}}">{{node}}</option>
+        {% endfor %}
+    </select>
+    <label for="middlenode">Select Middlenode: </label>
+    <select name="middlenode" id="middlenode">
+        {% for node in nodes %}
+        <option value="{{node}}">{{node}}</option>
+        {% endfor %}
+    </select>
+</form>
+
+<footer>
+    <h4> GHZ      : Greenberger–Horne–Zeilinger state (GHZ state)</h4>
+    <h4>Endnode1  : A node in the network which is involved in three party entanglement </h4>
+    <h4>Endnode2  : A node in the network which is involved in three party entanglement </h4>
+    <h4>Endnode3  : A node in the network which is involved in three party entanglement </h4>
+    <h4>middlenode: A node in the network where GHZ state is obtained using above node's qubit stored at their memories</h4>
+</footer>

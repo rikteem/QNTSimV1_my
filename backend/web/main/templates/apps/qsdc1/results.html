@@ -1,0 +1,22 @@
+<table id="Messages">
+    {% comment %} <caption><h3>Keys</h3></caption> {% endcomment %}
+    <tr>
+        <th>Display Message</th>
+        {% for display_msg_i in display_msg %}
+        <td>{{ display_msg_i }}</td>
+        {% endfor %}
+    </tr>
+    
+    <tr>
+        <th>Key Transmitted</th>
+        <td>{{ key_transmitted }}</td>
+    </tr>
+    <tr>
+        <th>Key Shared Received</th>
+        <td>{{ key_shared_received }}</td>
+    </tr>
+    <tr>
+        <th>Final Key</th>
+        <td>{{ final_key }}</td>
+    </tr>
+</table>

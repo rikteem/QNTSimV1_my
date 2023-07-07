@@ -1,0 +1,39 @@
+<table id="Keys">
+    <caption><h3>Keys</h3></caption>
+    <tr>
+        <th></th>
+        {% for Bobs_r_i in Bobs_r %}
+        <th>{{ forloop.counter }}</th>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th>Bob</th>
+        {% for Bobs_r_i in Bobs_r %}
+        <td>{{ Bobs_r_i }}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th>Alice</th>
+        {% for Alice_r_i in Alice_r %}
+        <td>{{ Alice_r_i }}</td>
+        {% endfor %}
+    </tr>
+</table>
+
+<br>
+
+<h3>{{ display_msg }}</h3>
+
+<br>
+
+<table id="Messages">
+    <caption><h3>Messages</h3></caption>
+    <tr>
+        <th>Input Message</th>
+        <td>{{ input_message }}</td>
+    </tr>
+    <tr>
+        <th>Received Message</th>
+        <td>{{ bob_message }}</td>
+    </tr>
+</table>

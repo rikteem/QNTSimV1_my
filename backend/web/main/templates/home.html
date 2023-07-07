@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ title }}</title>
+
+	{% load static %}
+	<link href="{% static '/assets/purpleBuzz/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static '/assets/purpleBuzz/css/boxicon.min.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/assets/purpleBuzz/css/templatemo.css' %}">
+    <link rel="stylesheet" href="{% static '/assets/purpleBuzz/css/custom.css' %}">
+	<link rel="stylesheet" href="{% static '/css/all.css' %}">
+	<link rel="stylesheet" href="{% static '/css/headings.css' %}">
+	<link rel="stylesheet" href="{% static '/css/table.css' %}">
+	<link rel="stylesheet" href="{% static '/css/form.css' %}">
+	<link rel="stylesheet" href="{% static '/css/nav.css' %}">
+	<link rel="stylesheet" href="{% static '/css/image.css' %}">
+	<script src="{% static '/js/jquery.min.js' %}"></script>
+	<script src="{% static '/js/app.js' %}"></script>
+
+</head>
+<body>
+	<!--
+	<div class="nav">
+        <ul>
+			<li><a href="https://www.qulabs.ai/"><img id="logo" src="{% static '/assets/images/QNTSim.png' %}"></img></a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/apps">Applications</a></li>
+        </ul> 
+    </div>-->
+
+	<nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow">
+        <div class="container d-flex align-items-center">
+			<div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="navbar-toggler-success">
+				<div class="navbar align-self-left d-flex">
+
+					<a class="nav-link " href="https://www.qulabs.ai/"><img src="{% static '/assets/images/QNTSim-removebg-preview.png' %}" width="150" height="50" alt=""></a>
+				
+				</div>
+				<div class="flex-fill mx-xl-5 mb-2">
+					<!--<a href="#">
+						<img src="{% static '/assets/images/QNTSim-removebg-preview.png' %}" width="120" height="40" alt="">
+					  </a>-->
+					
+					<ul class="nav navbar-nav d-flex mx-xl-5">
+						<!--<li class="nav-item">
+							<a href="https://www.qulabs.ai/"><img id="logo" src="{% static '/assets/images/QNTSim.png' %}"></img></a>
+						</li>-->
+						
+						<li class="nav-item">
+							<a class="nav-link btn-outline-primary rounded-pill px-5" href="/">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link btn-outline-primary rounded-pill px-5" href="/apps">Apps</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+    </nav>
+			
+	<!--
+    <h1>Home page for our simulator</h1>-->
+
+	<!-- Start Banner Hero -->
+    <div class="banner-wrapper bg-light">
+        <div id="index_banner" class="banner-vertical-center-index container-fluid pt-5">
+			<div class="py-5 row d-flex align-items-center">
+				<div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-left py-5 pb-5">
+					<h1 class="banner-heading h1 text-secondary display-3 mb-0 pb-5 mx-0 px-0 light-300 typo-space-line">
+						Quantum <strong>Network</strong> Simulator 
+					</h1>
+					<p class="banner-body text-muted py-3 mx-0 px-0">
+						State of the art tool that realistically simulates various optical components and provides a suit of low level and high-level quantum networking protocols which can be directly plugged into their applications by users. It also comes with a set of prebuilt highly popular Quantum Applications from fields like Cryptography and Quantum Secure Direct Communications. 
+					</p>
+					<a class="banner-button btn rounded-pill btn-outline-primary btn-lg px-4" href="/apps" role="button">Get Started</a>
+				</div>
+			</div>
+        </div>
+    </div>
+    <!-- End Banner Hero -->
+
+	<!-- Start Service -->
+    <section class="service-wrapper py-3">
+        <div class="container-fluid pb-3">
+            <div class="row">
+                <h2 class="h2 text-center col-12 py-5 semi-bold-600">Why do you need a Quantum Networks Simulator? </h2>
+                <div class="service-header col-2 col-lg-3 text-end light-300">
+                    <i class='bx bx-gift h3 mt-1'></i>
+                </div>
+                <div class="service-heading col-10 col-lg-9 text-start float-end light-300">
+                    <h2 class="h3 pb-4 typo-space-line">Quantum is future!</h2>
+                </div>
+            </div>
+            <p class="service-footer col-10 offset-2 col-lg-9 offset-lg-3 text-start pb-3 text-muted px-2">
+                There is a lot of interest in the Quantum Networking domain. New algorithms and protocols are being developed in various academic and corporate settings. Experimental verification of these will need very expensive setups to be implemented. Setting up a basic network in itself is a very challenging task. We, through this Quantum Network Simulator aim to alleviate the cost barrier of entry so that researchers can prototype and test protocols. We also aim at allowing scalable network architectures to be implemented so that researchers can study the impact of their algorithms on huge graphs. 
+				Research in other areas of Quantum Computing also require entangled states to be distributed between any two nodes in the network. In a nutshell, we provide the users with a full-blown Quantum Communication Infrastructure that can be used to prototype protocols as well as used as a base of other applications that depend on quantum state distribution between multiple nodes. 
+            </p>
+        </div>
+
+		<div class="container-fluid pb-3">
+            <div class="row">
+                <h2 class="h2 text-center col-12 py-5 semi-bold-600">What are Quantum Networks anyways? </h2>
+               <!-- <div class="service-header col-2 col-lg-3 text-end light-300">
+                    <i class='bx bx-gift h3 mt-1'></i>
+                </div>
+                <div class="service-heading col-10 col-lg-9 text-start float-end light-300">
+                    <h2 class="h3 pb-4 typo-space-line">Quantum is future!</h2>
+                </div>-->
+            </div>
+            <p class="service-footer col-10 offset-2 col-lg-9 offset-lg-3 text-start pb-3 text-muted px-2">
+                Quantum networking is an emerging field which aims at harnessing the properties of light to distribute quantum information and enable fields such as secure communications etc.  Quantum Networks consist of nodes capable of sending/receiving quantum information and optical channels capable of carrying this information. The current goal is robust implementation of these networks and make them capable of serving applications that can take advantage of quantum data transmission. 
+            </p>
+        </div>
+    </section>
+</body>
+</html>
